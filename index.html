@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lagarto - Kompleksowe Usługi dla Wspólnot i Spółdzielni Mieszkaniowych | Szczecin</title>
+<meta name="description" content="Kompleksowe usługi utrzymania nieruchomości: sprzątanie, pielęgnacja zieleni, wywóz gabarytów, czyszczenie elewacji, DDD i inspekcje dronem. Obsługujemy wspólnoty i spółdzielnie mieszkaniowe.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --black: #111111;
+    --gray-900: #1a1a1a;
+    --gray-700: #444444;
+    --gray-500: #777777;
+    --gray-300: #bbbbbb;
+    --gray-100: #f5f5f5;
+    --gray-50: #fafafa;
+    --white: #ffffff;
+    --accent: #2d6a4f;
+    --accent-light: #52b788;
+    --accent-pale: #d8f3dc;
+    --border: #e8e8e8;
+    --radius: 4px;
+    --radius-lg: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo .logo-mark {
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--black); }
+
+.nav-cta {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    padding: 9px 22px;
+    border-radius: var(--radius);
+    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.02em;
+    transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: var(--gray-900) !important; color: var(--white) !important; }
+
+.nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border);
+    padding: 8px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    color: var(--black);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; align-items: center; }
+}
+
+/* ── HERO ── */
+.hero {
+    padding-top: 64px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-photo {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://www.lot.com/content/dam/lot/lot-com/destination-photos/polska/szczecin/szczecin-city-view.coreimg.jpg/1750149187432/szczecin-city-view.jpg');
+    background-size: cover;
+    background-position: center 60%;
+    z-index: 0;
+}
+
+.hero-bg-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        rgba(0,0,0,0.85) 0%,
+        rgba(0,0,0,0.65) 50%,
+        rgba(0,0,0,0.4) 100%
+    );;
+}
+
+.hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-light);
+    margin-bottom: 1.5rem;
+}
+
+.hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--accent-light);
+}
+
+.hero h1 {
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    max-width: 700px;
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: var(--accent-light);
+}
+
+.hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.01em;
+}
+
+.btn-dark {
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-dark:hover { background: var(--gray-100); }
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,0.35);
+}
+
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
+
+.hero-trust {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    flex-wrap: wrap;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.trust-item .ti-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    color: var(--accent-light);
+}
+
+/* ── STATS ── */
+.stats {
+    background: var(--black);
+    padding: 4rem 2rem;
+}
+
+.stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+}
+
+.stat {
+    padding: 1.5rem 2rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.stat:last-child { border-right: none; }
+
+.stat-num {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .stats-inner { grid-template-columns: repeat(3, 1fr); }
+    .stat { border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+
+@media (max-width: 600px) {
+    .stats-inner { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── SECTION WRAPPER ── */
+.section {
+    padding: 6rem 2rem;
+}
+
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.section-tag::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--accent);
+}
+
+.section-title {
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--black);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.section-desc {
+    font-size: 1rem;
+    color: var(--gray-500);
+    line-height: 1.75;
+    max-width: 560px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+}
+
+/* ── SERVICES GRID ── */
+.services-section { background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.srv-card {
+    background: var(--white);
+    padding: 2.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+    position: relative;
+}
+
+.srv-card:hover { background: var(--gray-50); }
+
+.srv-card:hover .srv-arrow { opacity: 1; transform: translate(0, 0); }
+
+.srv-num {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gray-300);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+}
+
+.srv-icon {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    display: block;
+}
+
+.srv-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.02em;
+}
+
+.srv-desc {
+    font-size: 0.83rem;
+    color: var(--gray-500);
+    line-height: 1.65;
+    flex: 1;
+}
+
+.srv-arrow {
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 1rem;
+    color: var(--gray-300);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: all 0.2s;
+}
+
+.srv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.2rem;
+}
+
+.srv-tag {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--gray-500);
+    background: var(--gray-50);
+}
+
+.srv-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1.2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: gap 0.2s, color 0.2s;
+}
+
+.srv-more-link:hover {
+    gap: 10px;
+    color: var(--black);
+}
+
+.srv-card.accent-card {
+    background: var(--accent);
+}
+
+.srv-card.accent-card:hover { background: var(--accent); filter: brightness(1.05); }
+
+.srv-card.accent-card .srv-num,
+.srv-card.accent-card .srv-name,
+.srv-card.accent-card .srv-desc { color: rgba(255,255,255,0.9); }
+
+.srv-card.accent-card .srv-num { color: rgba(255,255,255,0.5); }
+
+.srv-card.accent-card .srv-tag {
+    border-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.7);
+    background: rgba(255,255,255,0.1);
+}
+
+.srv-card.accent-card .srv-arrow { color: rgba(255,255,255,0.5); }
+
+.srv-card.accent-card .srv-more-link {
+    color: rgba(255,255,255,0.85);
+}
+
+.srv-card.accent-card .srv-more-link:hover {
+    color: #ffffff;
+}
+
+/* Services — mobile */
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 580px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .srv-card {
+        padding: 1.5rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .srv-card:last-child {
+        border-bottom: none;
+    }
+
+    .srv-num { margin-bottom: 0.8rem; }
+    .srv-icon { font-size: 1.5rem; margin-bottom: 0.7rem; }
+    .srv-name { font-size: 0.95rem; }
+
+    .srv-arrow { display: none; }
+}
+
+/* Szeroka karta usługi 07 */
+.srv-card-wide {
+    grid-column: span 3;
+    background: var(--gray-50);
+}
+
+@media (max-width: 900px) {
+    .srv-card-wide { grid-column: span 2; }
+}
+
+@media (max-width: 580px) {
+    .srv-card-wide {
+        grid-column: span 1;
+    }
+
+    .srv-card-wide .srv-wide-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .srv-card-wide .srv-wide-cta {
+        align-self: flex-start;
+        margin-top: 1rem;
+    }
+}
+
+.srv-wide-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.srv-wide-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--black);
+    white-space: nowrap;
+    border: 1.5px solid var(--border);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+    flex-shrink: 0;
+}
+
+.srv-wide-cta:hover {
+    border-color: var(--gray-300);
+    background: var(--white);
+}
+
+/* ── FOR WHOM ── */
+.forwhom-section { background: var(--white); border-bottom: 1px solid var(--border); }
+
+.fw-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.fw-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: all 0.25s;
+}
+
+.fw-card:hover {
+    border-color: var(--gray-300);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+
+.fw-icon {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.fw-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.fw-desc {
+    font-size: 0.83rem;
+    color: var(--gray-500);
+    line-height: 1.7;
+}
+
+.fw-list {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.fw-list li {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fw-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .fw-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .fw-grid { grid-template-columns: 1fr; }
+}
+
+/* ── WHY US ── */
+.why-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+
+.why-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: 720px;
+}
+
+.why-point {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: flex-start;
+}
+
+.why-point:first-child { padding-top: 0; }
+.why-point:last-child { border-bottom: none; }
+
+.wp-num {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--gray-300);
+    letter-spacing: 0.05em;
+    padding-top: 2px;
+    min-width: 24px;
+}
+
+.wp-body h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.02em;
+}
+
+.wp-body p {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+/* ── PROCESS ── */
+.process-section { background: var(--white); border-bottom: 1px solid var(--border); }
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--border);
+}
+
+.ps-step {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    position: relative;
+}
+
+.ps-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--gray-100);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.ps-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+
+.ps-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+}
+
+.ps-desc {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .process-steps { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+    .process-steps { grid-template-columns: 1fr; }
+}
+
+/* ── MARQUEE KLIENCI ── */
+.clients-section { background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.marquee-wrap {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.marquee-wrap::before,
+.marquee-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-wrap::before { left: 0; background: linear-gradient(to right, var(--gray-50), transparent); }
+.marquee-wrap::after { right: 0; background: linear-gradient(to left, var(--gray-50), transparent); }
+
+.marquee-row {
+    display: flex;
+    gap: 0.75rem;
+    white-space: nowrap;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 0.75rem;
+    animation: marquee-left 35s linear infinite;
+}
+
+.marquee-track-r {
+    display: flex;
+    gap: 0.75rem;
+    animation: marquee-right 38s linear infinite;
+}
+
+.marquee-track:hover,
+.marquee-track-r:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+}
+
+.client-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 10px 20px;
+    white-space: nowrap;
+    transition: border-color 0.2s;
+}
+
+.client-chip:hover { border-color: var(--gray-300); }
+
+.cc-icon {
+    width: 30px; height: 30px;
+    background: var(--gray-100);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.cc-text {
+    font-size: 0.78rem;
+    color: var(--gray-700);
+}
+
+.cc-text strong {
+    display: block;
+    font-weight: 600;
+    color: var(--black);
+    font-size: 0.8rem;
+}
+
+.clients-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.cs-item {
+    background: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.cs-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.cs-label {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+}
+
+@media (max-width: 700px) {
+    .clients-stats { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── CTA ── */
+.cta-section {
+    background: var(--black);
+    padding: 7rem 2rem;
+}
+
+.cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.cta-left h2 {
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.cta-left p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+}
+
+.cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.03);
+}
+
+.contact-row:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.06);
+}
+
+.cr-icon-wrap {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.cr-label {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.4);
+    display: block;
+}
+
+.cr-value {
+    font-size: 0.95rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.cr-arrow {
+    margin-left: auto;
+    color: rgba(255,255,255,0.2);
+    font-size: 1rem;
+}
+
+.cta-note {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .cta-inner { grid-template-columns: 1fr; gap: 3rem; }
+}
+
+/* ── FOOTER ── */
+.footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem 2rem;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.footer-logo {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo .logo-mark {
+    width: 28px; height: 28px;
+    background: var(--accent);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.footer-tagline {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+}
+
+.footer-cert {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    line-height: 1.8;
+}
+
+.footer-col-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 1rem;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links a {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover { color: rgba(255,255,255,0.9); }
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+}
+
+.footer-bottom a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover { color: rgba(255,255,255,0.6); }
+
+@media (max-width: 900px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+@media (max-width: 500px) {
+    .footer-inner { grid-template-columns: 1fr; }
+}
+
+/* ── ANIMATIONS ── */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.08s; }
+.fade-in-delay-2 { transition-delay: 0.16s; }
+.fade-in-delay-3 { transition-delay: 0.24s; }
+.fade-in-delay-4 { transition-delay: 0.32s; }
+.fade-in-delay-5 { transition-delay: 0.40s; }
+.fade-in-delay-6 { transition-delay: 0.48s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" role="navigation" aria-label="Nawigacja główna">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <span class="logo-mark">L</span> Lagarto
+        </a>
+        <ul class="nav-links">
+            <li><a href="#uslugi">Usługi</a></li>
+            <li><a href="#dla-kogo">Dla kogo</a></li>
+            <li><a href="#jak-dzialamy">Jak działamy</a></li>
+            <li><a href="#kontakt" class="nav-cta">Bezpłatna wycena</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" role="banner">
+    <div class="hero-bg-photo" aria-hidden="true"></div>
+    <div class="hero-inner">
+        <div class="hero-eyebrow fade-in">Od 2019 roku · Szczecin i okolice</div>
+        <h1 class="fade-in fade-in-delay-1">
+            Kompleksowe<br>usługi dla<br><em>Wspólnot</em><br>i Spółdzielni
+        </h1>
+        <p class="hero-desc fade-in fade-in-delay-2">
+            Jeden partner - siedem dziedzin. Sprzątanie, zieleń, elewacje, wywóz odpadów, dezynsekcja i inspekcje dronem. Wszystko od jednej firmy, na jednej fakturze.
+        </p>
+        <div class="hero-actions fade-in fade-in-delay-3">
+            <a href="#kontakt" class="btn btn-dark">Bezpłatna wycena →</a>
+            <a href="#uslugi" class="btn btn-outline">Zobacz usługi</a>
+        </div>
+        <div class="hero-trust fade-in fade-in-delay-4">
+            <div class="trust-item">
+                <div class="ti-icon">✓</div> Faktura VAT
+            </div>
+            <div class="trust-item">
+                <div class="ti-icon">✓</div> Dojazd gratis 50 km
+            </div>
+            <div class="trust-item">
+                <div class="ti-icon">✓</div> Pon–Sob 8–18
+            </div>
+            <div class="trust-item">
+                <div class="ti-icon">✓</div> Ubezpieczenie OC
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- STATS -->
+<!-- <div class="stats" aria-label="Statystyki firmy">
+    <div class="stats-inner">
+        <div class="stat fade-in">
+            <div class="stat-num" data-target="312">0</div>
+            <div class="stat-label">Budynków obsłużonych</div>
+        </div>
+        <div class="stat fade-in fade-in-delay-1">
+            <div class="stat-num" data-target="87">0</div>
+            <div class="stat-label">Wspólnot mieszkaniowych</div>
+        </div>
+        <div class="stat fade-in fade-in-delay-2">
+            <div class="stat-num" data-target="6">0</div>
+            <div class="stat-label">Lat doświadczenia</div>
+        </div>
+        <div class="stat fade-in fade-in-delay-3">
+            <div class="stat-num" data-target="7">0</div>
+            <div class="stat-label">Dziedzin usług</div>
+        </div>
+        <div class="stat fade-in fade-in-delay-4">
+            <div class="stat-num" data-target="98">0</div>
+            <div class="stat-label">% klientów poleca nas dalej</div>
+        </div>
+    </div>
+</div>-->
+
+<!-- SERVICES -->
+<section class="section services-section" id="uslugi">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Nasze usługi</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Siedem dziedzin.<br>Jeden partner.</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Specjalizujemy się w kompleksowej obsłudze budynków wielorodzinnych i terenów wspólnych — od sprzątania klatek po inspekcję dachu dronem.</p>
+        </div>
+
+        <div class="services-grid">
+            <a href="utrzymanie-obiektow.html" class="srv-card fade-in">
+                <div class="srv-num">01.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Utrzymanie Obiektów</div>
+                <p class="srv-desc">Całoroczna obsługa budynku — sprzątanie klatek schodowych, korytarzy, piwnic, pralni i terenów wspólnych. Stałe umowy z gwarantowanym standardem.</p>
+                <div class="srv-tags">
+                    <span class="srv-tag">Klatki schodowe</span>
+                    <span class="srv-tag">Umowy cykliczne</span>
+                    <span class="srv-tag">Kontrola jakości</span>
+                </div>
+                
+            </a>
+
+            <a href="uslugi-ogrodnicze.html" class="srv-card fade-in fade-in-delay-1">
+                <div class="srv-num">02.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Usługi Ogrodnicze</div>
+                <p class="srv-desc">Pielęgnacja terenów zielonych — koszenie trawników, przycinanie żywopłotów i krzewów, sadzenie, grabienie, odśnieżanie w sezonie zimowym.</p>
+                <div class="srv-tags">
+                    <span class="srv-tag">Koszenie</span>
+                    <span class="srv-tag">Żywopłoty</span>
+                    <span class="srv-tag">Całoroczna pielęgnacja</span>
+                </div>
+      
+            </a>
+
+            <a href="wywoz-gabarytow.html" class="srv-card fade-in fade-in-delay-2">
+                <div class="srv-num">03.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Wywóz Gabarytów</div>
+                <p class="srv-desc">Odbiór i utylizacja odpadów wielkogabarytowych — meble, sprzęt RTV/AGD, opony, gruz. Opróżniamy piwnice, strychy i pomieszczenia gospodarcze.</p>
+                <div class="srv-tags">
+                    <span class="srv-tag">Meble i RTV/AGD</span>
+                    <span class="srv-tag">Piwnice i strychy</span>
+                    <span class="srv-tag">Utylizacja zgodna z prawem</span>
+                </div>
+                
+            </a>
+
+            <a href="maszynowe-czyszczenie.html" class="srv-card fade-in fade-in-delay-3">
+                <div class="srv-num">04.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Maszynowe Doczyszczanie</div>
+                <p class="srv-desc">Czyszczenie garaży podziemnych, hal, chodników i placów. Maszyny szorujące i zamiatające usuwają zabrudzenia niedostępne dla metod ręcznych.</p>
+                <div class="srv-tags">
+                    <span class="srv-tag">Garaże podziemne</span>
+                    <span class="srv-tag">Posadzki przemysłowe</span>
+                    <span class="srv-tag">Mycie ciśnieniowe</span>
+                </div>
+                
+            </a>
+
+            <a href="czyszczenie-elewacji.html" class="srv-card fade-in fade-in-delay-4">
+                <div class="srv-num">05.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Czyszczenie Elewacji</div>
+                <p class="srv-desc">Przywracamy estetykę budynku — usuwamy zabrudzenia, glony, mchy i smog metodą ciśnieniową lub chemiczną, bezpiecznie dla powierzchni i mieszkańców.</p>
+                <div class="srv-tags">
+                    <span class="srv-tag">Glony i mchy</span>
+                    <span class="srv-tag">Cegła i tynk</span>
+                    <span class="srv-tag">Bez rusztowania</span>
+                </div>
+                
+            </a>
+
+            <a href="czyszczenie-elewacji.html" class="srv-card fade-in fade-in-delay-4">
+                <div class="srv-num">06.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Usługi DDD</div>
+                <p class="srv-desc">Dezynfekcja, dezynsekcja i deratyzacja. Eliminujemy szkodniki, gryzonie, owady i patogeny — skutecznie i bezpiecznie dla mieszkańców oraz środowiska.</p>
+                <div class="srv-tags">
+                    <span class="srv-tag">Deratyzacja</span>
+                    <span class="srv-tag">Dezynfekcja</span>
+                    <span class="srv-tag">Certyfikowane preparaty</span>
+                </div>   
+            </a>
+            <a href="czyszczenie-elewacji.html" class="srv-card fade-in fade-in-delay-4">
+                <div class="srv-num">07.</div>
+                <div class="srv-arrow">↗</div>
+                <div class="srv-name">Inspekcje Dronem UAV</div>
+                <p class="srv-desc">Przegląd techniczny dachów i elewacji dronem — raport PDF dla zarządcy gotowy w 24h, bez rusztowania, bez wstrzymania użytkowania budynku. Od 399 zł.</p>
+                <div class="srv-tags">
+                            <span class="srv-tag">Dachy i elewacje</span>
+                            <span class="srv-tag">Raport PDF 24h</span>
+                            <span class="srv-tag">Certyfikat ULC</span>
+                            <span class="srv-tag">Akceptowany przez TU</span>
+                </div>   
+            </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="section forwhom-section" id="dla-kogo">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Dla kogo</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Obsługujemy<br>każdego zarządcę</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Rozumiemy specyfikę zarządzania nieruchomościami wielorodzinnymi</p>
+        </div>
+
+        <div class="fw-grid">
+            <div class="fw-card fade-in">
+                <div class="fw-icon">🏘️</div>
+                <div class="fw-title">Wspólnoty Mieszkaniowe</div>
+                <p class="fw-desc">Zarząd wspólnoty zyskuje rzetelnego partnera obsługującego wszystkie potrzeby budynku — od sprzątania klatek po inspekcję dachu.</p>
+                <ul class="fw-list">
+                    <li>Dokumentacja do uchwał remontowych</li>
+                    <li>Jedna faktura za wiele usług</li>
+                    <li>Raporty gotowe na zebranie</li>
+                    <li>Stałe umowy z gwarantowanym terminem</li>
+                </ul>
+            </div>
+
+            <div class="fw-card fade-in fade-in-delay-1">
+                <div class="fw-icon">🏗️</div>
+                <div class="fw-title">Spółdzielnie Mieszkaniowe</div>
+                <p class="fw-desc">Obsługujemy spółdzielnie z wieloma obiektami jednocześnie — pakiety wieloobiektowe, umowy cykliczne i dokumentacja zbiorcza.</p>
+                <ul class="fw-list">
+                    <li>Wiele budynków jednocześnie</li>
+                    <li>Wieloletnie plany remontowe</li>
+                    <li>Sprawozdania roczne</li>
+                    <li>Rabaty przy dużym wolumenie</li>
+                </ul>
+            </div>
+
+            <div class="fw-card fade-in fade-in-delay-2">
+                <div class="fw-icon">📋</div>
+                <div class="fw-title">Zarządcy i administratorzy</div>
+                <p class="fw-desc">Firmy zarządzające nieruchomościami w imieniu właścicieli — dostarczamy dokumentację spełniającą wymogi prawne i oczekiwania zleceniodawców.</p>
+                <ul class="fw-list">
+                    <li>Raporty akceptowane przez PINB</li>
+                    <li>Dokumentacja do ubezpieczycieli</li>
+                    <li>Faktura VAT i dedykowany opiekun</li>
+                    <li>Realizacja w 24–48h</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Dlaczego Lagarto</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Jeden partner<br>zamiast siedmiu</h2>
+            </div>
+        </div>
+
+        <div class="why-points">
+            <div class="why-point fade-in">
+                <div class="wp-num">01</div>
+                <div class="wp-body">
+                    <h4>Kompleksowość w jednym miejscu</h4>
+                    <p>Siedem usług od jednej firmy — jeden opiekun, jedna umowa, jedna faktura. Koniec z koordynowaniem wielu podwykonawców.</p>
+                </div>
+            </div>
+            <div class="why-point fade-in fade-in-delay-1">
+                <div class="wp-num">02</div>
+                <div class="wp-body">
+                    <h4>Terminowość bez przypominania</h4>
+                    <p>Stałe harmonogramy usług — przycinanie żywopłotów, sprzątanie klatek, przeglądy dachów — realizujemy bez potrzeby każdorazowego zlecania.</p>
+                </div>
+            </div>
+            <div class="why-point fade-in fade-in-delay-2">
+                <div class="wp-num">03</div>
+                <div class="wp-body">
+                    <h4>Dokumentacja gotowa do użycia</h4>
+                    <p>Raporty techniczne, protokoły, faktury — wszystko w formie akceptowanej przez ubezpieczycieli, urzędy i organy nadzoru budowlanego.</p>
+                </div>
+            </div>
+            <div class="why-point fade-in fade-in-delay-3">
+                <div class="wp-num">04</div>
+                <div class="wp-body">
+                    <h4>Praca bez zakłócania użytkowników</h4>
+                    <p>Organizujemy prace tak, żeby mieszkańcy nie odczuli żadnych utrudnień — w tym inspekcje dronem bez zajmowania parkingów i wejść.</p>
+                </div>
+            </div>
+            <div class="why-point fade-in fade-in-delay-4">
+                <div class="wp-num">05</div>
+                <div class="wp-body">
+                    <h4>Ubezpieczenie OC i certyfikaty</h4>
+                    <p>Pracujemy z ubezpieczeniem OC zawodowym, certyfikowanymi operatorami UAV (ULC) i atestowanymi środkami chemicznymi DDD.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="jak-dzialamy">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Jak działamy</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Prosto i sprawnie<br>od kontaktu do faktury</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Bez zbędnej biurokracji. Wycena w ciągu godziny, realizacja w 24–48h.</p>
+        </div>
+
+        <div class="process-steps">
+            <div class="ps-step fade-in">
+                <div class="ps-num">01</div>
+                <div class="ps-icon">📞</div>
+                <div class="ps-title">Kontakt i wycena</div>
+                <p class="ps-desc">Zadzwoń lub napisz. Odpiszemy w ciągu godziny z wyceną — bez zobowiązań. Dla zarządców z wieloma budynkami przygotowujemy ofertę pakietową.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-1">
+                <div class="ps-num">02</div>
+                <div class="ps-icon">📄</div>
+                <div class="ps-title">Umowa i harmonogram</div>
+                <p class="ps-desc">Podpisujemy umowę z określonym zakresem, częstotliwością i standardem. Wystawiamy ofertę formalną z pieczątką gotową do akceptacji przez zarząd.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-2">
+                <div class="ps-num">03</div>
+                <div class="ps-icon">🔧</div>
+                <div class="ps-title">Realizacja usługi</div>
+                <p class="ps-desc">Pracujemy bez zakłócania użytkowników budynku. Dla każdej usługi — od koszenia po lot dronem — stosujemy sprawdzone procedury.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-3">
+                <div class="ps-num">04</div>
+                <div class="ps-icon">📋</div>
+                <div class="ps-title">Protokół i raport</div>
+                <p class="ps-desc">Po każdej usłudze wystawiamy protokół lub raport techniczny — gotowy do przekazania mieszkańcom, ubezpieczycielowi lub nadzorowi budowlanemu.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-4">
+                <div class="ps-num">05</div>
+                <div class="ps-icon">🧾</div>
+                <div class="ps-title">Faktura VAT</div>
+                <p class="ps-desc">Jedna faktura VAT za wszystkie usługi z danego okresu rozliczeniowego. Obsługujemy przetargi publiczne i zamówienia w ramach PZP.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CLIENTS MARQUEE -->
+<section class="section clients-section" id="klienci">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Zaufali nam</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Wspólnoty i spółdzielnie<br>z całej Polski</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Obsługujemy zarządców, wspólnoty i spółdzielnie od Szczecina po Kraków.</p>
+        </div>
+
+        <div class="marquee-wrap fade-in">
+            <div class="marquee-row">
+                <div class="marquee-track">
+                    <div class="client-chip"><div class="cc-icon">🏢</div><div class="cc-text"><strong>WM ul. Lipowa 14</strong>Warszawa</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏗️</div><div class="cc-text"><strong>SM Nowe Horyzonty</strong>Kraków</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏘️</div><div class="cc-text"><strong>WM Osiedle Słoneczne</strong>Łódź</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏛️</div><div class="cc-text"><strong>SM Przyszłość</strong>Wrocław</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏠</div><div class="cc-text"><strong>Admin-Nieruchomości</strong>Poznań</div></div>
+                    <div class="client-chip"><div class="cc-icon">📐</div><div class="cc-text"><strong>WM Zielone Wzgórze</strong>Gdańsk</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏢</div><div class="cc-text"><strong>SM Południe</strong>Katowice</div></div>
+                    <div class="client-chip"><div class="cc-icon">🔑</div><div class="cc-text"><strong>Nieruchomości Premium</strong>Gdynia</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏗️</div><div class="cc-text"><strong>WM Osiedle Parkowe</strong>Bydgoszcz</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏛️</div><div class="cc-text"><strong>SM Zawisza</strong>Bydgoszcz</div></div>
+                    <div class="client-chip"><div class="cc-icon">🌆</div><div class="cc-text"><strong>ZBK Lublin</strong>Lublin</div></div>
+                    <div class="client-chip"><div class="cc-icon">🏘️</div><div class="cc-text"><strong>WM Centrum</strong>Szczecin</div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="kontakt">
+    <div class="cta-inner">
+        <div class="cta-left fade-in">
+            <h2>Zamów bezpłatną wycenę dla Twojej wspólnoty</h2>
+            <p>Podaj adres budynku i zakres usług — wycenę otrzymasz w ciągu godziny. Wystawiamy ofertę formalną z pieczątką gotową do akceptacji przez zarząd wspólnoty lub spółdzielni.</p>
+        </div>
+        <div class="cta-right fade-in fade-in-delay-2">
+            <a href="tel:+48500000000" class="contact-row">
+                <div class="cr-icon-wrap">📞</div>
+                <div>
+                    <span class="cr-label">Zadzwoń</span>
+                    <span class="cr-value">500 000 000 | 500 000 000</span>
+                </div>
+                <span class="cr-arrow">→</span>
+            </a>
+            <a href="mailto:kontakt@lagarto.szczecin.pl" class="contact-row">
+                <div class="cr-icon-wrap">✉️</div>
+                <div>
+                    <span class="cr-label">Napisz</span>
+                    <span class="cr-value">kontakt@lagarto.szczecin.pl</span>
+                </div>
+                <span class="cr-arrow">→</span>
+            </a>
+            <a href="#" class="contact-row">
+                <div class="cr-icon-wrap">💬</div>
+                <div>
+                    <span class="cr-label">WhatsApp / SMS 24/7</span>
+                    <span class="cr-value">+48 500 000 000</span>
+                </div>
+                <span class="cr-arrow">→</span>
+            </a>
+            <p class="cta-note">📍 Dojazd gratis do 50 km · Faktura VAT · Ubezpieczenie OC zawodowe · Certyfikat UAV (ULC)</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">
+                <span class="logo-mark">L</span> Lagarto
+            </div>
+            <p class="footer-tagline">Kompleksowe usługi utrzymania nieruchomości dla wspólnot mieszkaniowych, spółdzielni i zarządców. Od 2019 roku.</p>
+            <p class="footer-cert">NIP: 000-000-00-00 · Ubezpieczenie OC · Certyfikowany operator UAV (ULC)<br>Atestowane środki DDD · Faktura VAT</p>
+        </div>
+        <div>
+            <p class="footer-col-title">Usługi</p>
+            <ul class="footer-links">
+                <li><a href="utrzymanie-obiektow.html">Utrzymanie obiektów</a></li>
+                <li><a href="uslugi-ogrodnicze.html">Usługi ogrodnicze</a></li>
+                <li><a href="wywoz-gabarytow.html">Wywóz gabarytów</a></li>
+                <li><a href="maszynowe-czyszczenie.html">Maszynowe czyszczenie</a></li>
+                <li><a href="czyszczenie-elewacji.html">Czyszczenie elewacji</a></li>
+                <li><a href="uslugi-ddd.html">Usługi DDD</a></li>
+                <li><a href="drony.html">Inspekcje dronem</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Firma</p>
+            <ul class="footer-links">
+                <li><a href="#">O nas</a></li>
+                <li><a href="#dla-kogo">Dla kogo</a></li>
+                <li><a href="#jak-dzialamy">Jak działamy</a></li>
+                <li><a href="#klienci">Klienci</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Kontakt</p>
+            <ul class="footer-links">
+                <li><a href="tel:+48500000000">+48 500 000 000 | +48 500 000 000</a></li>
+                <li><a href="mailto:kontakt@lagarto.com.pl">kontakt@lagarto.com.pl</a></li>
+                <li><a href="#">Szczecin i okolice</a></li>
+                <li><a href="#">Pon–Sob 8:00–18:00</a></li>
+            </ul>
+            <div style="margin-top:1.2rem;">
+                <p class="footer-col-title">Prawne</p>
+                <ul class="footer-links">
+                    <li><a href="#">Polityka prywatności</a></li>
+                    <li><a href="#">Warunki usługi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Lagarto — Kompleksowe usługi dla wspólnot i spółdzielni mieszkaniowych</p>
+        <p><a href="#">Polityka prywatności</a> · <a href="#">Warunki usługi</a></p>
+    </div>
+</footer>
+
+<script>
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+faders.forEach(el => io.observe(el));
+
+// Animated counters
+function animateCount(el) {
+    const target = +el.dataset.target;
+    const dur = 1600;
+    const start = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    (function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.round(ease(p) * target);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+    })(start);
+}
+
+const counters = document.querySelectorAll('[data-target]');
+const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            animateCount(e.target);
+            cio.unobserve(e.target);
+        }
+    });
+}, { threshold: 0.5 });
+counters.forEach(c => cio.observe(c));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' });
+        }
+    });
+});
+
+// Nav highlight on scroll
+const sections = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) cur = s.id;
+    });
+    navAs.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + cur ? '#111' : '';
+    });
+}, { passive: true });
+</script>
+</body>
+</html>

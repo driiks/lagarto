@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wywóz gabarytów i opróżnianie piwnic – Lagarto Szczecin</title>
+<meta name="description" content="Profesjonalny wywóz odpadów wielkogabarytowych, opróżnianie piwnic i strychów w Szczecinie. Legalna utylizacja, numer BDO 000542514. Realizacja 2–3 dni robocze.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --black: #111111;
+    --gray-900: #1a1a1a;
+    --gray-700: #444444;
+    --gray-500: #777777;
+    --gray-300: #bbbbbb;
+    --gray-100: #f5f5f5;
+    --gray-50: #fafafa;
+    --white: #ffffff;
+    --accent: #2d6a4f;
+    --accent-light: #52b788;
+    --accent-pale: #d8f3dc;
+    --border: #e8e8e8;
+    --radius: 4px;
+    --radius-lg: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+}
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo .logo-mark {
+    width: 32px; height: 32px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.9rem; font-weight: 800;
+}
+.nav-links {
+    display: flex; align-items: center; gap: 2.5rem; list-style: none;
+}
+.nav-links a {
+    font-size: 0.85rem; font-weight: 500; color: var(--gray-700);
+    text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--black); }
+.nav-cta {
+    background: var(--black) !important; color: var(--white) !important;
+    padding: 9px 22px; border-radius: var(--radius);
+    font-weight: 600 !important; font-size: 0.82rem !important;
+    letter-spacing: 0.02em; transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--gray-900) !important; color: var(--white) !important; }
+.nav-mobile-toggle {
+    display: none; background: none; border: 1px solid var(--border);
+    padding: 8px; border-radius: var(--radius); cursor: pointer;
+    color: var(--black); font-size: 1.2rem;
+}
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: flex; align-items: center; }
+}
+
+/* ── HERO ── */
+.hero {
+    padding-top: 64px;
+    min-height: 62vh;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+}
+.hero-bg-photo {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=1600&q=80');
+    background-size: cover; background-position: center 50%;
+    z-index: 0;
+}
+.hero-bg-photo::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.68) 55%, rgba(0,0,0,0.40) 100%);
+}
+.hero-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative; z-index: 1; width: 100%;
+}
+.breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 1.5rem;
+}
+.breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+.breadcrumb span { color: rgba(255,255,255,0.25); }
+.hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--accent-light); margin-bottom: 1.2rem;
+}
+.hero-eyebrow::before {
+    content: ''; display: block; width: 24px; height: 2px; background: var(--accent-light);
+}
+.hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800;
+    line-height: 1.06; letter-spacing: -0.04em; color: var(--white);
+    margin-bottom: 1.2rem; max-width: 680px;
+}
+.hero h1 em { font-style: normal; color: var(--accent-light); }
+.hero-desc {
+    font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75;
+    margin-bottom: 2rem; max-width: 500px;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 13px 28px; border-radius: var(--radius);
+    font-size: 0.88rem; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+    cursor: pointer; border: none; letter-spacing: 0.01em;
+}
+.btn-dark { background: var(--white); color: var(--black); }
+.btn-dark:hover { background: var(--gray-100); }
+.btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
+.hero-trust {
+    display: flex; gap: 1.5rem;
+    margin-top: 2.5rem; padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.12); flex-wrap: wrap;
+}
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+.trust-item .ti-icon {
+    width: 28px; height: 28px; background: rgba(255,255,255,0.1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem; color: var(--accent-light);
+}
+
+/* ── BDO BANNER ── */
+.bdo-banner {
+    background: var(--black);
+    padding: 0;
+}
+.bdo-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+}
+.bdo-item {
+    padding: 1.6rem 2rem;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    display: flex; flex-direction: column; gap: 0.3rem;
+}
+.bdo-item:last-child { border-right: none; }
+.bdo-label {
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent-light);
+}
+.bdo-value {
+    font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -0.01em;
+}
+.bdo-sub { font-size: 0.75rem; color: rgba(255,255,255,0.35); line-height: 1.5; }
+@media (max-width: 700px) {
+    .bdo-inner { grid-template-columns: 1fr 1fr; }
+    .bdo-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+}
+
+/* ── SECTION ── */
+.section { padding: 5.5rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1rem;
+}
+.section-tag::before { content: ''; display: block; width: 20px; height: 2px; background: var(--accent); }
+.section-title {
+    font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800;
+    letter-spacing: -0.03em; color: var(--black); line-height: 1.15; margin-bottom: 1rem;
+}
+.section-desc { font-size: 1rem; color: var(--gray-500); line-height: 1.75; max-width: 540px; }
+.section-head {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    gap: 2rem; margin-bottom: 3.5rem; flex-wrap: wrap;
+}
+
+/* ── SCOPE ── */
+.scope-section { background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.scope-tabs {
+    display: flex; gap: 0;
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; margin-bottom: 2.5rem; background: var(--border);
+}
+.scope-tab {
+    flex: 1; padding: 1rem 1.5rem; background: var(--white); border: none;
+    cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.85rem;
+    font-weight: 600; color: var(--gray-500);
+    display: flex; align-items: center; gap: 8px; justify-content: center;
+    transition: all 0.2s; letter-spacing: 0.01em;
+}
+.scope-tab:hover { color: var(--black); background: var(--gray-50); }
+.scope-tab.active { background: var(--black); color: var(--white); }
+.scope-tab .tab-icon { font-size: 1rem; }
+.scope-panel { display: none; }
+.scope-panel.active { display: block; }
+
+.scope-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+}
+.scope-item {
+    background: var(--white); padding: 1.8rem 2rem;
+    display: flex; align-items: flex-start; gap: 1rem; transition: background 0.2s;
+}
+.scope-item:hover { background: var(--gray-50); }
+.scope-check {
+    width: 28px; height: 28px; background: var(--accent-pale);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem; color: var(--accent); flex-shrink: 0; margin-top: 2px;
+}
+.scope-text strong { display: block; font-size: 0.9rem; font-weight: 600; color: var(--black); letter-spacing: -0.01em; margin-bottom: 0.2rem; }
+.scope-text span { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; }
+
+@media (max-width: 680px) {
+    .scope-grid { grid-template-columns: 1fr; }
+    .scope-tab { font-size: 0.78rem; padding: 0.8rem 0.6rem; }
+}
+
+/* ── BDO LEGAL STRIP ── */
+.legal-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.legal-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.legal-badge {
+    background: var(--gray-50); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2.5rem;
+    display: flex; flex-direction: column; gap: 1.2rem;
+}
+.lb-bdo {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--accent-pale); border-radius: var(--radius);
+    padding: 0.8rem 1.2rem;
+}
+.lb-bdo-icon { font-size: 1.4rem; }
+.lb-bdo-text strong { display: block; font-size: 1rem; font-weight: 800; color: var(--accent); letter-spacing: -0.01em; }
+.lb-bdo-text span { font-size: 0.72rem; color: var(--accent); opacity: 0.7; }
+.legal-points { display: flex; flex-direction: column; gap: 0; }
+.legal-point {
+    display: flex; align-items: flex-start; gap: 1rem;
+    padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+}
+.legal-point:last-child { border-bottom: none; padding-bottom: 0; }
+.lp-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.lp-body strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--black); margin-bottom: 0.2rem; letter-spacing: -0.01em; }
+.lp-body span { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; }
+@media (max-width: 820px) { .legal-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ── PROCESS ── */
+.process-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.process-steps {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+}
+.ps-step { background: var(--white); padding: 2.2rem 2rem; }
+.ps-num { font-size: 0.68rem; font-weight: 700; color: var(--gray-300); letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+.ps-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+.ps-title { font-size: 0.95rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.ps-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.65; }
+@media (max-width: 900px) { .process-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 580px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ── WHY US ── */
+.why-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.why-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.why-points { display: flex; flex-direction: column; gap: 0; }
+.why-point { display: flex; gap: 1.5rem; padding: 1.6rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.why-point:first-child { padding-top: 0; }
+.why-point:last-child { border-bottom: none; }
+.wp-num { font-size: 0.7rem; font-weight: 700; color: var(--gray-300); letter-spacing: 0.05em; padding-top: 2px; min-width: 24px; }
+.wp-body h4 { font-size: 0.93rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; letter-spacing: -0.02em; }
+.wp-body p { font-size: 0.82rem; color: var(--gray-500); line-height: 1.65; }
+.why-cta-box {
+    background: var(--black); border-radius: var(--radius-lg);
+    padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem;
+    position: sticky; top: 88px;
+}
+.wcb-tag { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-light); }
+.wcb-title { font-size: 1.4rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1.2; }
+.wcb-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+.wcb-contact { display: flex; flex-direction: column; gap: 0.8rem; }
+.wcb-row {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+    padding: 1rem; border-radius: var(--radius);
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.2s;
+}
+.wcb-row:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+.wcb-row-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.08); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.wcb-row-text { flex: 1; }
+.wcb-row-text span { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
+.wcb-row-text strong { font-size: 0.88rem; color: var(--white); font-weight: 600; }
+.wcb-row-arrow { color: rgba(255,255,255,0.3); font-size: 0.9rem; }
+.wcb-note { font-size: 0.72rem; color: rgba(255,255,255,0.3); line-height: 1.6; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+@media (max-width: 900px) { .why-layout { grid-template-columns: 1fr; gap: 2.5rem; } .why-cta-box { position: static; } }
+
+/* ── FAQ ── */
+.faq-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.faq-list { max-width: 760px; display: flex; flex-direction: column; gap: 0; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+    padding: 1.5rem 0; font-size: 0.95rem; font-weight: 600; color: var(--black);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; letter-spacing: -0.015em; user-select: none;
+}
+.faq-q::after { content: '+'; font-size: 1.2rem; color: var(--gray-300); font-weight: 300; flex-shrink: 0; transition: transform 0.2s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { display: none; padding-bottom: 1.5rem; font-size: 0.85rem; color: var(--gray-500); line-height: 1.75; }
+.faq-item.open .faq-a { display: block; }
+
+/* ── GALLERY ── */
+.gallery-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px;
+    border-radius: var(--radius-lg); overflow: hidden;
+}
+.gallery-item { overflow: hidden; position: relative; cursor: pointer; background: var(--gray-100); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item .g-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; align-items: flex-end; padding: 1.2rem;
+}
+.gallery-item:hover .g-overlay { opacity: 1; }
+.g-caption { font-size: 0.75rem; color: rgba(255,255,255,0.9); font-weight: 500; letter-spacing: 0.02em; }
+.g1 { grid-column: span 5; grid-row: span 2; height: 420px; }
+.g2 { grid-column: span 7; height: 205px; }
+.g3 { grid-column: span 7; height: 205px; }
+.g4 { grid-column: span 4; height: 260px; }
+.g5 { grid-column: span 4; height: 260px; }
+.g6 { grid-column: span 4; height: 260px; }
+@media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; }
+    .g1,.g2,.g3,.g4,.g5,.g6 { grid-column: span 1; grid-row: span 1; height: 200px; }
+}
+@media (max-width: 540px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .g1,.g2,.g3,.g4,.g5,.g6 { height: 220px; }
+}
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; display: none; align-items: center; justify-content: center; padding: 2rem; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: var(--radius-lg); box-shadow: 0 32px 80px rgba(0,0,0,0.6); }
+.lb-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.1); border: none; color: var(--white); font-size: 1.5rem; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.lb-close:hover { background: rgba(255,255,255,0.2); }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: var(--white); font-size: 1.5rem; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.lb-nav:hover { background: rgba(255,255,255,0.2); }
+.lb-prev { left: 1.5rem; } .lb-next { right: 1.5rem; }
+.lb-caption { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); font-size: 0.8rem; color: rgba(255,255,255,0.6); white-space: nowrap; }
+
+/* ── RELATED ── */
+.related-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.related-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+}
+.rel-card { background: var(--white); padding: 2rem; text-decoration: none; display: flex; flex-direction: column; gap: 0.8rem; transition: background 0.2s; }
+.rel-card:hover { background: var(--gray-50); }
+.rel-icon { font-size: 1.6rem; }
+.rel-name { font-size: 0.9rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; }
+.rel-desc { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; flex: 1; }
+.rel-link { font-size: 0.75rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 4px; transition: gap 0.2s; }
+.rel-card:hover .rel-link { gap: 8px; }
+@media (max-width: 900px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .related-grid { grid-template-columns: 1fr; } }
+
+/* ── CTA ── */
+.cta-section { background: var(--black); padding: 5rem 2rem; }
+.cta-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.cta-left h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+.cta-left p { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.75; }
+.cta-right { display: flex; flex-direction: column; gap: 0.75rem; }
+.contact-row { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); text-decoration: none; transition: all 0.2s; }
+.contact-row:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.15); }
+.cr-icon-wrap { width: 36px; height: 36px; background: rgba(255,255,255,0.08); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.contact-row > div { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.cr-label { font-size: 0.7rem; color: rgba(255,255,255,0.35); letter-spacing: 0.03em; }
+.cr-value { font-size: 0.9rem; font-weight: 600; color: var(--white); }
+.cr-arrow { color: rgba(255,255,255,0.3); font-size: 0.9rem; }
+.cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); line-height: 1.65; padding-top: 0.25rem; }
+@media (max-width: 768px) { .cta-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ── FOOTER ── */
+.footer { background: var(--gray-900); border-top: 1px solid rgba(255,255,255,0.06); padding: 4rem 2rem 0; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; }
+.footer-logo { font-size: 1.15rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+.footer-logo .logo-mark { width: 30px; height: 30px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.82rem; font-weight: 800; }
+.footer-tagline { font-size: 0.8rem; color: rgba(255,255,255,0.35); line-height: 1.7; margin-bottom: 1rem; }
+.footer-cert { font-size: 0.72rem; color: rgba(255,255,255,0.2); line-height: 1.7; }
+.footer-col-title { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 1rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.footer-bottom p { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+.footer-bottom a { color: rgba(255,255,255,0.25); text-decoration: none; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.5); }
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* ── FADE IN ── */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+            <span class="logo-mark">L</span>
+            Lagarto
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html#uslugi">Usługi</a></li>
+            <li><a href="index.html#dla-kogo">Dla kogo</a></li>
+            <li><a href="index.html#jak-dzialamy">Jak działamy</a></li>
+            <li><a href="index.html#klienci">Klienci</a></li>
+            <li><a href="#kontakt" class="nav-cta">Bezpłatna wycena</a></li>
+        </ul>
+        <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-photo"></div>
+    <div class="hero-inner">
+        <div class="breadcrumb">
+            <a href="index.html">Lagarto</a>
+            <span>›</span>
+            <a href="index.html#uslugi">Usługi</a>
+            <span>›</span>
+            <span style="color:rgba(255,255,255,0.65)">Wywóz gabarytów</span>
+        </div>
+        <div class="hero-eyebrow">Wywóz gabarytów</div>
+        <h1>Szybko, legalnie,<br>z dokumentem –<br><em>Szczecin i okolice</em></h1>
+        <p class="hero-desc">Meble, AGD, RTV, gruz, opróżnianie piwnic i strychów. Działamy z numerem BDO – bez mandatów, bez problemów dla zarządcy.</p>
+        <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-dark">Zamów szybką wycenę</a>
+            <a href="#zakres" class="btn btn-outline">Co zabieramy?</a>
+        </div>
+        <div class="hero-trust">
+            <div class="trust-item"><div class="ti-icon">📋</div> BDO: 000542514 – legalna utylizacja</div>
+            <div class="trust-item"><div class="ti-icon">⚡</div> Realizacja 2–3 dni robocze</div>
+            <div class="trust-item"><div class="ti-icon">📍</div> Szczecin i okolice do 40 km</div>
+            <div class="trust-item"><div class="ti-icon">🧾</div> Dokument KPO na życzenie</div>
+        </div>
+    </div>
+</section>
+
+<!-- BDO BANNER -->
+<div class="bdo-banner">
+    <div class="bdo-inner">
+        <div class="bdo-item">
+            <div class="bdo-label">Numer BDO</div>
+            <div class="bdo-value">000542514</div>
+            <div class="bdo-sub">Legalna utylizacja z dokumentem potwierdzającym</div>
+        </div>
+        <div class="bdo-item">
+            <div class="bdo-label">Czas realizacji</div>
+            <div class="bdo-value">2–3 dni robocze</div>
+            <div class="bdo-sub">W pilnych przypadkach nawet 24h</div>
+        </div>
+        <div class="bdo-item">
+            <div class="bdo-label">Zasięg</div>
+            <div class="bdo-value">do ~40 km</div>
+            <div class="bdo-sub">Szczecin, Police, Goleniów, Stargard i okolice</div>
+        </div>
+        <div class="bdo-item">
+            <div class="bdo-label">Wycena</div>
+            <div class="bdo-value">Przez telefon</div>
+            <div class="bdo-sub">Bez ukrytych kosztów – cena przed realizacją</div>
+        </div>
+    </div>
+</div>
+
+<!-- SCOPE -->
+<section class="section scope-section" id="zakres">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Zakres usługi</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Co zabieramy<br>i co robimy?</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Obsługujemy przedmioty, których miasto nie zabiera w regularnym odbiorze. Segregujemy na miejscu i wywożemy jednym kursem.</p>
+        </div>
+
+        <div class="scope-tabs fade-in">
+            <button class="scope-tab active" onclick="switchTab('gabaryty', this)">
+                <span class="tab-icon">🛋️</span> Odpady wielkogabarytowe
+            </button>
+            <button class="scope-tab" onclick="switchTab('piwnice', this)">
+                <span class="tab-icon">🏚️</span> Piwnice i strychy
+            </button>
+            <button class="scope-tab" onclick="switchTab('zewnetrze', this)">
+                <span class="tab-icon">🌿</span> Tereny zewnętrzne
+            </button>
+        </div>
+
+        <div class="scope-panel active" id="tab-gabaryty">
+            <div class="scope-grid">
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Meble tapicerowane</strong>
+                        <span>Sofy, fotele, materace, łóżka – wynosimy i ładujemy bez angażowania lokatora.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Meble skrzyniowe</strong>
+                        <span>Szafy, komody, stoły, krzesła, regały – każdy rozmiar i ilość.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Sprzęt AGD</strong>
+                        <span>Lodówki, pralki, zmywarki, kuchenki – z bezpieczną segregacją jako elektrośmieci.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Sprzęt RTV i elektronika</strong>
+                        <span>Telewizory, monitory, komputery, drukarki – legalna utylizacja WEEE.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Drzwi, okna, wykładziny</strong>
+                        <span>Resztki po remontach: panele, kafelki, glazura, dywany.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Opony i sprzęt sportowy</strong>
+                        <span>Opony samochodowe i rowerowe (ilości nieprzemysłowe), rowery, wózki dziecięce.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scope-panel" id="tab-piwnice">
+            <div class="scope-grid">
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Kompleksowe opróżnianie piwnic</strong>
+                        <span>Wynosimy wszystko – bez wyjątków. Szczególnie w starszych budynkach ze zgromadzonymi latami odpadami.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Strychy i komórki lokatorskie</strong>
+                        <span>Opróżniamy całe pomieszczenia – zostawiamy czysto i gotowe do użycia.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Segregacja na miejscu</strong>
+                        <span>Dzielimy odpady na surowce wtórne, elektrośmieci, makulaturę, odpady zmieszane – jeden kurs wystarczy.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Wywóz gruzu poremontowego</strong>
+                        <span>Gruz, resztki materiałów budowlanych, kafle – wyceniamy oddzielnie ze względu na wagę i utylizację.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Lokale po przeprowadzce lub eksmisji</strong>
+                        <span>Likwidacja zawartości lokalu – dyskretnie, sprawnie, z dokumentem potwierdzającym odbiór.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Wspólne przestrzenie budynku</strong>
+                        <span>Usuwanie nagromadzonych odpadów z korytarzy, wózkowni, rowerowni i przestrzeni wspólnych.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scope-panel" id="tab-zewnetrze">
+            <div class="scope-grid">
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Porzucone przedmioty z podwórek</strong>
+                        <span>Meble, sprzęt i odpady pozostawione na terenie nieruchomości bez właściciela.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Niechciane rowery i wózki</strong>
+                        <span>Usuwanie porzuconego sprzętu z altan, garaży, rowerowni i podwórek.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Garaże i altany śmietnikowe</strong>
+                        <span>Porządkowanie i opróżnianie altan śmietnikowych, garaży oraz wiat po sezonie.</span>
+                    </div>
+                </div>
+                <div class="scope-item">
+                    <div class="scope-check">✓</div>
+                    <div class="scope-text">
+                        <strong>Porządki po remontach i zmianach najemców</strong>
+                        <span>Szybkie uprzątnięcie terenu nieruchomości po pracach lub wymianie lokatorów.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEGAL -->
+<section class="section legal-section" id="bdo">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Legalna utylizacja</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Dlaczego numer BDO<br>ma znaczenie?</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Wyrzucenie gabarytów w nieodpowiednim miejscu grozi mandatem i problemami prawnymi dla zarządcy nieruchomości.</p>
+        </div>
+        <div class="legal-layout">
+            <div class="legal-points fade-in">
+                <div class="legal-point">
+                    <div class="lp-icon">⚖️</div>
+                    <div class="lp-body">
+                        <strong>Działamy zgodnie z ustawą o odpadach</strong>
+                        <span>Posiadamy numer rejestrowy BDO: 000542514. Zebrane odpady przekazujemy wyłącznie do legalnych punktów utylizacji lub recyklingu.</span>
+                    </div>
+                </div>
+                <div class="legal-point">
+                    <div class="lp-icon">📄</div>
+                    <div class="lp-body">
+                        <strong>Dokument KPO na życzenie</strong>
+                        <span>Wystawiamy kartę przekazania odpadów (KPO) lub protokół odbioru – przydatne dla zarządców rozliczających się z lokatorami lub urzędami.</span>
+                    </div>
+                </div>
+                <div class="legal-point">
+                    <div class="lp-icon">🛡️</div>
+                    <div class="lp-body">
+                        <strong>Ochrona zarządcy przed mandatem</strong>
+                        <span>Korzystając z naszych usług, masz pewność, że odpady nie trafią do dzikich wysypisk. Żadnego ryzyka dla Ciebie ani wspólnoty.</span>
+                    </div>
+                </div>
+                <div class="legal-point">
+                    <div class="lp-icon">♻️</div>
+                    <div class="lp-body">
+                        <strong>Segregacja i recykling</strong>
+                        <span>Elektrośmieci, makulatura, metale, surowce wtórne – segregujemy na miejscu, minimalizując ilość odpadów trafiających na składowiska.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="legal-badge fade-in fade-in-delay-2">
+                <div class="lb-bdo">
+                    <div class="lb-bdo-icon">📋</div>
+                    <div class="lb-bdo-text">
+                        <strong>BDO: 000542514</strong>
+                        <span>Numer rejestrowy firmy Lagarto</span>
+                    </div>
+                </div>
+                <div style="font-size:0.82rem; color:var(--gray-500); line-height:1.7;">
+                    Rejestr BDO (Baza danych o produktach i opakowaniach oraz o gospodarce odpadami) to obowiązkowy rejestr prowadzony przez marszałków województw. Posiadanie numeru BDO oznacza, że firma działa w pełni legalnie i jest uprawniona do transportu i przekazywania odpadów.
+                </div>
+                <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                    <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--gray-700);">
+                        <span style="color:var(--accent); font-weight:700;">✓</span> Legalny transport odpadów
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--gray-700);">
+                        <span style="color:var(--accent); font-weight:700;">✓</span> Przekazanie do autoryzowanych punktów
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--gray-700);">
+                        <span style="color:var(--accent); font-weight:700;">✓</span> Dokument KPO na życzenie
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px; font-size:0.8rem; color:var(--gray-700);">
+                        <span style="color:var(--accent); font-weight:700;">✓</span> Brak ryzyka mandatu dla zarządcy
+                    </div>
+                </div>
+                <a href="#kontakt" class="btn btn-dark" style="align-self:flex-start; margin-top:0.5rem;">Zamów z dokumentem KPO</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="jak-zamowic">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Jak zamówić</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Cztery proste kroki –<br>Ty nie musisz nic robić</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Wystarczy jeden telefon. Przyjeżdżamy, wynosimy, ładujemy i wywożemy – wszystkim zajmujemy się my.</p>
+        </div>
+        <div class="process-steps">
+            <div class="ps-step fade-in">
+                <div class="ps-num">01</div>
+                <div class="ps-icon">📞</div>
+                <div class="ps-title">Zadzwoń lub napisz</div>
+                <p class="ps-desc">Opisz, co chcesz zabrać i gdzie się to znajduje. Możemy też przyjechać na krótkie oględziny bez opłat.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-1">
+                <div class="ps-num">02</div>
+                <div class="ps-icon">💰</div>
+                <div class="ps-title">Wycena przez telefon</div>
+                <p class="ps-desc">Podamy orientacyjną cenę jeszcze w trakcie rozmowy. Bez ukrytych kosztów – cena ustalona przed realizacją.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-2">
+                <div class="ps-num">03</div>
+                <div class="ps-icon">📅</div>
+                <div class="ps-title">Ustalamy termin</div>
+                <p class="ps-desc">Zazwyczaj realizujemy w ciągu 2–3 dni roboczych. W pilnych przypadkach – nawet w 24 godziny.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-3">
+                <div class="ps-num">04</div>
+                <div class="ps-icon">🚛</div>
+                <div class="ps-title">Przyjeżdżamy i zabieramy</div>
+                <p class="ps-desc">Wynosimy, ładujemy i wywożemy. Na życzenie zostawiamy dokument KPO potwierdzający legalną utylizację.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="section why-section" id="dlaczego-lagarto">
+    <div class="section-inner">
+        <div class="why-layout">
+            <div>
+                <div class="section-tag fade-in">Dlaczego Lagarto</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Co wyróżnia nas<br>spośród konkurencji?</h2>
+                <div style="height:2rem"></div>
+                <div class="why-points">
+                    <div class="why-point fade-in">
+                        <div class="wp-num">01</div>
+                        <div class="wp-body">
+                            <h4>Legalna firma z numerem BDO</h4>
+                            <p>Nie działamy w szarej strefie. Posiadamy numer BDO 000542514 i pełną dokumentację wymaganą przepisami ustawy o odpadach.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in fade-in-delay-1">
+                        <div class="wp-num">02</div>
+                        <div class="wp-body">
+                            <h4>Szybka realizacja – nawet w 24h</h4>
+                            <p>Standardowo realizujemy w 2–3 dni robocze. Gdy odpady blokują klatkę schodową lub korytarz – reagujemy natychmiast.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in fade-in-delay-2">
+                        <div class="wp-num">03</div>
+                        <div class="wp-body">
+                            <h4>Cena znana z góry</h4>
+                            <p>Wycena przed realizacją – przez telefon lub po krótkich oględzinach. Żadnych niespodzianek na fakturze po wykonaniu usługi.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in fade-in-delay-3">
+                        <div class="wp-num">04</div>
+                        <div class="wp-body">
+                            <h4>Kompleksowa obsługa – jeden kurs</h4>
+                            <p>Segregujemy odpady na miejscu, wynosimy z każdego piętra i wywożemy wszystko jednym kursem. Ty nie musisz nic robić.</p>
+                        </div>
+                    </div>
+                    <div class="why-point fade-in fade-in-delay-4">
+                        <div class="wp-num">05</div>
+                        <div class="wp-body">
+                            <h4>Obsługa zarządców i wspólnot</h4>
+                            <p>Dla zarządców z wieloma budynkami przygotowujemy stały tryb odbioru bez konieczności każdorazowej obecności na miejscu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fade-in fade-in-delay-2">
+                <div class="why-cta-box">
+                    <div class="wcb-tag">Szybka wycena</div>
+                    <div class="wcb-title">Zadzwoń – podamy cenę od razu</div>
+                    <div class="wcb-desc">Opisz, co chcesz zabrać. Podamy orientacyjny koszt jeszcze przez telefon – bez zobowiązań i bez wizyty.</div>
+                    <div class="wcb-contact">
+                        <a href="tel:535483411" class="wcb-row">
+                            <div class="wcb-row-icon">📞</div>
+                            <div class="wcb-row-text">
+                                <span>Zadzwoń Pon–Pt 8:00–16:00</span>
+                                <strong>535 483 411</strong>
+                            </div>
+                            <span class="wcb-row-arrow">→</span>
+                        </a>
+                        <a href="mailto:biuro@lagarto.szczecin.pl" class="wcb-row">
+                            <div class="wcb-row-icon">✉️</div>
+                            <div class="wcb-row-text">
+                                <span>Napisz – odpiszemy w ciągu godziny</span>
+                                <strong>biuro@lagarto.szczecin.pl</strong>
+                            </div>
+                            <span class="wcb-row-arrow">→</span>
+                        </a>
+                    </div>
+                    <div class="wcb-note">📍 Szczecin i okolice · Faktura VAT · BDO: 000542514<br>Realizacja zazwyczaj 2–3 dni robocze od zgłoszenia.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="galeria">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Galeria</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Nasze realizacje –<br>przed i po</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Piwnice, strychy, podwórka i przestrzenie wspólne – kilka przykładów z naszych realizacji w Szczecinie.</p>
+        </div>
+        <div class="gallery-grid fade-in">
+            <div class="gallery-item g1" onclick="openLightbox(0)">
+                <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=900&q=80" alt="Opróżnianie piwnicy w bloku">
+                <div class="g-overlay"><span class="g-caption">Opróżnianie piwnicy – kamienica Szczecin</span></div>
+            </div>
+            <div class="gallery-item g2" onclick="openLightbox(1)">
+                <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=800&q=80" alt="Wywóz mebli i gabarytów">
+                <div class="g-overlay"><span class="g-caption">Wywóz mebli i sprzętu AGD</span></div>
+            </div>
+            <div class="gallery-item g3" onclick="openLightbox(2)">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Segregacja odpadów na miejscu">
+                <div class="g-overlay"><span class="g-caption">Segregacja odpadów na miejscu</span></div>
+            </div>
+            <div class="gallery-item g4" onclick="openLightbox(3)">
+                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&q=80" alt="Opróżniona piwnica po realizacji">
+                <div class="g-overlay"><span class="g-caption">Piwnica po opróżnieniu</span></div>
+            </div>
+            <div class="gallery-item g5" onclick="openLightbox(4)">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Wywóz gruzu poremontowego">
+                <div class="g-overlay"><span class="g-caption">Wywóz gruzu po remoncie</span></div>
+            </div>
+            <div class="gallery-item g6" onclick="openLightbox(5)">
+                <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&q=80" alt="Porządkowanie terenu zewnętrznego">
+                <div class="g-overlay"><span class="g-caption">Porządkowanie podwórka</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+    <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">FAQ</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Najczęściej zadawane<br>pytania</h2>
+            </div>
+        </div>
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <div class="faq-q">Ile kosztuje wywóz gabarytów w Szczecinie?</div>
+                <div class="faq-a">Cena zależy od ilości i rodzaju odpadów oraz lokalizacji. Przy małych zleceniach (np. jedna sofa i lodówka) koszt zaczyna się od kilkudziesięciu złotych. Przy opróżnianiu całej piwnicy lub strychu wyceniamy indywidualnie – zadzwoń, a podamy orientacyjną kwotę jeszcze przez telefon.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy muszę być obecny podczas odbioru?</div>
+                <div class="faq-a">Nie jest to konieczne – wystarczy zapewnić dostęp do pomieszczenia (np. przez innego lokatora lub administratora budynku). Dla zarządców nieruchomości możemy ustalić stały tryb odbioru bez konieczności każdorazowej obecności na miejscu.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy zabieracie gruz i odpady poremontowe?</div>
+                <div class="faq-a">Tak – zabieramy gruz, glazurę, kafle, resztki materiałów budowlanych i inne odpady poremontowe. Ze względu na wagę i sposób utylizacji gruzu cena za ten rodzaj odpadów ustalana jest oddzielnie.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy możecie opróżnić piwnicę w całości, łącznie z segregacją odpadów?</div>
+                <div class="faq-a">Tak – to jedna z naszych najczęstszych usług. Przyjeżdżamy z ekipą, segregujemy odpady na miejscu (elektrośmieci, makulatura, metale, odpady zmieszane) i wywożemy wszystko jednym kursem. Zarządca otrzymuje od nas potwierdzenie odbioru.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy wystawiacie dokumenty potwierdzające legalną utylizację?</div>
+                <div class="faq-a">Tak – na życzenie wystawiamy dokument KPO (karta przekazania odpadów) lub protokół odbioru. Posiadamy numer BDO 000542514 i działamy w pełni zgodnie z przepisami ustawy o odpadach.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Jak szybko możecie przyjechać?</div>
+                <div class="faq-a">Zazwyczaj realizujemy zlecenia w ciągu 2–3 dni roboczych od zgłoszenia. W pilnych przypadkach – np. gdy odpady blokują wyjście lub klatkę schodową – staramy się reagować w ciągu 24 godzin.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy zabieracie opony?</div>
+                <div class="faq-a">Tak – odbieramy opony samochodowe i rowerowe w ilościach nieprzemysłowych (typowo kilka do kilkunastu sztuk). Opony w ilościach hurtowych wymagają odrębnych ustaleń – skontaktuj się z nami, a doradzimy najlepsze rozwiązanie.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RELATED -->
+<section class="section related-section">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Powiązane usługi</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Zobacz też nasze<br>inne usługi</h2>
+            </div>
+        </div>
+        <div class="related-grid">
+            <a href="/uslugi-porzadkowe/" class="rel-card fade-in">
+                <div class="rel-icon">🧹</div>
+                <div class="rel-name">Sprzątanie budynków</div>
+                <div class="rel-desc">Regularne utrzymanie czystości klatek, korytarzy i terenów zewnętrznych.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+            <a href="/maszynowe-doczyszczanie/" class="rel-card fade-in fade-in-delay-1">
+                <div class="rel-icon">🔧</div>
+                <div class="rel-name">Maszynowe doczyszczanie</div>
+                <div class="rel-desc">Gruntowne czyszczenie powierzchni – po remoncie, sezonie lub interwencyjnie.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+            <a href="/uslugi-ogrodnicze/" class="rel-card fade-in fade-in-delay-2">
+                <div class="rel-icon">🌿</div>
+                <div class="rel-name">Usługi ogrodnicze</div>
+                <div class="rel-desc">Pielęgnacja terenów zielonych – koszenie, żywopłoty, nasadzenia.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+            <a href="/uslugi-ddd/" class="rel-card fade-in fade-in-delay-3">
+                <div class="rel-icon">🛡️</div>
+                <div class="rel-name">Usługi DDD</div>
+                <div class="rel-desc">Dezynfekcja, dezynsekcja i deratyzacja – atestowane środki, certyfikowani specjaliści.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="kontakt">
+    <div class="cta-inner">
+        <div class="cta-left fade-in">
+            <h2>Zamów wywóz gabarytów w Szczecinie</h2>
+            <p>Zadzwoń lub napisz – podamy cenę przez telefon jeszcze podczas pierwszej rozmowy. Realizujemy zazwyczaj w ciągu 2–3 dni roboczych. Na życzenie wystawiamy dokument KPO.</p>
+        </div>
+        <div class="cta-right fade-in fade-in-delay-2">
+            <a href="tel:535483411" class="contact-row">
+                <div class="cr-icon-wrap">📞</div>
+                <div>
+                    <span class="cr-label">Zadzwoń — Pon–Pt 8:00–16:00</span>
+                    <span class="cr-value">535 483 411</span>
+                </div>
+                <span class="cr-arrow">→</span>
+            </a>
+            <a href="mailto:biuro@lagarto.szczecin.pl" class="contact-row">
+                <div class="cr-icon-wrap">✉️</div>
+                <div>
+                    <span class="cr-label">Napisz — odpiszemy do 1h</span>
+                    <span class="cr-value">biuro@lagarto.szczecin.pl</span>
+                </div>
+                <span class="cr-arrow">→</span>
+            </a>
+            <p class="cta-note">📍 Szczecin i okolice · Faktura VAT · BDO: 000542514 · Realizacja 2–3 dni robocze</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div>
+            <div class="footer-logo">
+                <span class="logo-mark">L</span> Lagarto
+            </div>
+            <p class="footer-tagline">Kompleksowe usługi utrzymania nieruchomości dla wspólnot mieszkaniowych, spółdzielni i zarządców. Od 2019 roku.</p>
+            <p class="footer-cert">NIP: 000-000-00-00 · BDO: 000542514 · Ubezpieczenie OC · Faktura VAT</p>
+        </div>
+        <div>
+            <p class="footer-col-title">Usługi</p>
+            <ul class="footer-links">
+                <li><a href="/uslugi-porzadkowe/">Usługi porządkowe</a></li>
+                <li><a href="#">Wywóz gabarytów</a></li>
+                <li><a href="/uslugi-ogrodnicze/">Usługi ogrodnicze</a></li>
+                <li><a href="/maszynowe-doczyszczanie/">Maszynowe czyszczenie</a></li>
+                <li><a href="/czyszczenie-elewacji/">Mycie elewacji</a></li>
+                <li><a href="/uslugi-ddd/">Usługi DDD</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Firma</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="index.html#dla-kogo">Dla kogo</a></li>
+                <li><a href="index.html#jak-dzialamy">Jak działamy</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Kontakt</p>
+            <ul class="footer-links">
+                <li><a href="tel:535483411">535 483 411</a></li>
+                <li><a href="mailto:biuro@lagarto.szczecin.pl">biuro@lagarto.szczecin.pl</a></li>
+                <li><a href="#">Szczecin i okolice</a></li>
+                <li><a href="#">Pon–Pt 8:00–16:00</a></li>
+            </ul>
+            <div style="margin-top:1.2rem;">
+                <p class="footer-col-title">Prawne</p>
+                <ul class="footer-links">
+                    <li><a href="#">Polityka prywatności</a></li>
+                    <li><a href="#">Warunki usługi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Lagarto — Wywóz gabarytów i opróżnianie piwnic · Szczecin · BDO: 000542514</p>
+        <p><a href="#">Polityka prywatności</a> · <a href="#">Warunki usługi</a></p>
+    </div>
+</footer>
+
+<script>
+// Fade-in
+const faders = document.querySelectorAll('.fade-in');
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -28px 0px' });
+faders.forEach(el => io.observe(el));
+
+// Tabs
+function switchTab(id, btn) {
+    document.querySelectorAll('.scope-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.scope-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
+}
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+    });
+});
+
+// Lightbox
+const lbImages = [
+    { src: 'https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=1200&q=90', caption: 'Opróżnianie piwnicy – kamienica Szczecin' },
+    { src: 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?w=1200&q=90', caption: 'Wywóz mebli i sprzętu AGD' },
+    { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=90', caption: 'Segregacja odpadów na miejscu' },
+    { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=1200&q=90', caption: 'Piwnica po opróżnieniu' },
+    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90', caption: 'Wywóz gruzu po remoncie' },
+    { src: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=1200&q=90', caption: 'Porządkowanie podwórka' },
+];
+let lbCurrent = 0;
+function openLightbox(idx) {
+    lbCurrent = idx;
+    document.getElementById('lb-img').src = lbImages[idx].src;
+    document.getElementById('lb-caption').textContent = (idx + 1) + ' / ' + lbImages.length + ' — ' + lbImages[idx].caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+function closeLightboxOnBg(e) { if (e.target === document.getElementById('lightbox')) closeLightbox(); }
+function lbNav(dir) {
+    lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+    document.getElementById('lb-img').src = lbImages[lbCurrent].src;
+    document.getElementById('lb-caption').textContent = (lbCurrent + 1) + ' / ' + lbImages.length + ' — ' + lbImages[lbCurrent].caption;
+}
+document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft') lbNav(-1);
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' }); }
+    });
+});
+</script>
+</body>
+</html>
