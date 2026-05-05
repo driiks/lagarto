@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Usługi ogrodnicze w Szczecinie – koszenie, żywopłoty, pielęgnacja zieleni | Lagarto</title>
-<meta name="description" content="Profesjonalne usługi ogrodnicze w Szczecinie dla wspólnot i spółdzielni. Koszenie trawników, przycinanie żywopłotów, grabienie liści – przez cały rok. Wycena gratis.">
+<title>Wycinka drzew i cięcie sanitarne w Szczecinie – podnośnik do 22m | Lagarto</title>
+<meta name="description" content="Profesjonalna wycinka drzew i cięcie sanitarne w Szczecinie. Podnośnik koszowy do 22m, usuwanie drzew trudnodostępnych, odcinanie konarów, frezowanie pniaków. Wycena gratis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -53,8 +53,8 @@ body {
 
 /* ── HERO ── */
 .hero { padding-top: 64px; min-height: 62vh; display: flex; align-items: center; position: relative; overflow: hidden; }
-.hero-bg-photo { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1600&q=80'); background-size: cover; background-position: center 55%; z-index: 0; }
-.hero-bg-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.87) 0%, rgba(0,0,0,0.62) 55%, rgba(0,0,0,0.35) 100%); }
+.hero-bg-photo { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1600&q=80'); background-size: cover; background-position: center 40%; z-index: 0; }
+.hero-bg-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.65) 55%, rgba(0,0,0,0.38) 100%); }
 .hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; width: 100%; }
 .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 1.5rem; }
 .breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
@@ -62,9 +62,9 @@ body {
 .breadcrumb span { color: rgba(255,255,255,0.25); }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-light); margin-bottom: 1.2rem; }
 .hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--accent-light); }
-.hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.04em; color: var(--white); margin-bottom: 1.2rem; max-width: 680px; }
+.hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.04em; color: var(--white); margin-bottom: 1.2rem; max-width: 720px; }
 .hero h1 em { font-style: normal; color: var(--accent-light); }
-.hero-desc { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 2rem; max-width: 500px; }
+.hero-desc { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 2rem; max-width: 520px; }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: var(--radius); font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; letter-spacing: 0.01em; }
 .btn-dark { background: var(--white); color: var(--black); }
@@ -84,6 +84,15 @@ body {
 .stat-num .accent { color: var(--accent-light); }
 .stat-label { font-size: 0.73rem; color: rgba(255,255,255,0.38); line-height: 1.4; }
 @media (max-width: 700px) { .stats-inner { grid-template-columns: 1fr 1fr; } .stat { border-bottom: 1px solid rgba(255,255,255,0.08); } }
+
+/* ── LIFT BANNER ── */
+.lift-banner { background: var(--accent); padding: 1.1rem 2rem; }
+.lift-banner-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: space-between; }
+.lift-banner-text { display: flex; align-items: center; gap: 12px; }
+.lift-icon { font-size: 1.5rem; }
+.lift-banner-text p { font-size: 0.88rem; font-weight: 600; color: var(--white); }
+.lift-banner-text span { font-size: 0.8rem; color: rgba(255,255,255,0.75); font-weight: 400; }
+.lift-badge { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); padding: 6px 18px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; color: var(--white); letter-spacing: 0.04em; white-space: nowrap; }
 
 /* ── SECTION ── */
 .section { padding: 5.5rem 2rem; }
@@ -110,24 +119,6 @@ body {
 .scope-text span { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; }
 @media (max-width: 680px) { .scope-grid { grid-template-columns: 1fr; } .scope-tab { font-size: 0.72rem; padding: 0.8rem 0.5rem; } }
 
-/* ── SEASONS ── */
-.seasons-section { background: var(--white); border-bottom: 1px solid var(--border); }
-.seasons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.season-card { background: var(--white); padding: 2.2rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s; position: relative; overflow: hidden; }
-.season-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-.season-card.spring::before { background: #74c69d; }
-.season-card.summer::before { background: #2d6a4f; }
-.season-card.autumn::before { background: #e76f51; }
-.season-card.winter::before { background: #00a1ff; }
-.season-card:hover { background: var(--gray-50); }
-.season-icon { font-size: 1.8rem; }
-.season-name { font-size: 1rem; font-weight: 800; color: var(--black); letter-spacing: -0.03em; }
-.season-tasks { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.3rem; }
-.season-task { display: flex; align-items: flex-start; gap: 8px; font-size: 0.78rem; color: var(--gray-500); line-height: 1.5; }
-.season-task::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent-light); flex-shrink: 0; margin-top: 6px; }
-@media (max-width: 900px) { .seasons-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 540px) { .seasons-grid { grid-template-columns: 1fr; } }
-
 /* ── FOR WHOM ── */
 .forwhom-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
 .fw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
@@ -138,6 +129,19 @@ body {
 .fw-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.7; }
 @media (max-width: 900px) { .fw-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 540px) { .fw-grid { grid-template-columns: 1fr; } }
+
+/* ── LIFT FEATURE SECTION ── */
+.lift-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.lift-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.lift-photo { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
+.lift-photo img { width: 100%; height: 480px; object-fit: cover; display: block; }
+.lift-photo-badge { position: absolute; bottom: 1.5rem; left: 1.5rem; background: var(--black); color: var(--white); padding: 10px 18px; border-radius: var(--radius); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; }
+.lift-specs { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+.lift-spec-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--gray-50); }
+.lsr-icon { font-size: 1.4rem; flex-shrink: 0; }
+.lsr-body strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--black); margin-bottom: 2px; letter-spacing: -0.01em; }
+.lsr-body span { font-size: 0.78rem; color: var(--gray-500); line-height: 1.5; }
+@media (max-width: 900px) { .lift-layout { grid-template-columns: 1fr; gap: 2.5rem; } .lift-photo img { height: 320px; } }
 
 /* ── WHY US ── */
 .why-section { background: var(--white); border-bottom: 1px solid var(--border); }
@@ -166,14 +170,21 @@ body {
 
 /* ── PROCESS ── */
 .process-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
-.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
-.ps-step { background: var(--white); padding: 2.2rem 2rem; }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.ps-step { background: var(--white); padding: 2.2rem 1.8rem; }
 .ps-num { font-size: 0.68rem; font-weight: 700; color: var(--gray-300); letter-spacing: 0.1em; margin-bottom: 1.2rem; }
 .ps-icon { font-size: 1.6rem; margin-bottom: 1rem; }
 .ps-title { font-size: 0.95rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
 .ps-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.65; }
-@media (max-width: 900px) { .process-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 1000px) { .process-steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 580px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ── IMPORTANT NOTE ── */
+.note-section { background: #fffbeb; border-top: 1px solid #fde68a; border-bottom: 1px solid #fde68a; padding: 2.5rem 2rem; }
+.note-inner { max-width: 1200px; margin: 0 auto; display: flex; gap: 1.5rem; align-items: flex-start; }
+.note-icon { font-size: 1.6rem; flex-shrink: 0; }
+.note-body h4 { font-size: 0.95rem; font-weight: 700; color: #92400e; margin-bottom: 0.4rem; }
+.note-body p { font-size: 0.85rem; color: #a16207; line-height: 1.7; }
 
 /* ── FAQ ── */
 .faq-section { background: var(--white); border-bottom: 1px solid var(--border); }
@@ -294,11 +305,11 @@ body {
             <span>›</span>
             <a href="index.html#uslugi">Usługi</a>
             <span>›</span>
-            <span style="color:rgba(255,255,255,0.65)">Usługi ogrodnicze</span>
+            <span style="color:rgba(255,255,255,0.65)">Wycinka drzew i cięcie sanitarne</span>
         </div>
-        <div class="hero-eyebrow">Usługi ogrodnicze</div>
-        <h1>Pielęgnacja zieleni<br>przez cały rok -<br><em>Szczecin i okolice</em></h1>
-        <p class="hero-desc">Koszenie trawników, przycinanie żywopłotów, grabienie liści i wiosenne porządki. Zadbane tereny zielone bez Twojego nadzoru - zgodnie z harmonogramem.</p>
+        <div class="hero-eyebrow">Arborystyka i wycinka drzew</div>
+        <h1>Wycinka drzew<br>i cięcie sanitarne<br></h1>
+        <p class="hero-desc">Usuwamy drzewa zagrażające bezpieczeństwu, wykonujemy cięcia sanitarne i pielęgnacyjne koron. Podnośnik koszowy do 22 m - bezpiecznie, bez rusztowań, bez uszkodzeń nawierzchni.</p>
         <div class="hero-actions">
             <a href="#kontakt" class="btn btn-dark">Zamów bezpłatną wycenę</a>
             <a href="#zakres" class="btn btn-outline">Zobacz zakres usług</a>
@@ -306,118 +317,131 @@ body {
     </div>
 </section>
 
-    <!-- SCOPE -->
+<!-- LIFT BANNER -->
+<div class="lift-banner">
+    <div class="lift-banner-inner">
+        <div class="lift-banner-text">
+            <div class="lift-icon">🏗️</div>
+            <div>
+                <p>Pracujemy z podnośnikiem koszowym</p>
+                <span>Bezpieczna praca na wysokości bez konieczności wspinaczki. Bezpośredni dostęp do korony drzewa do wysokości 22 metrów.</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SCOPE -->
 <section class="section scope-section" id="zakres">
     <div class="section-inner">
         <div class="section-head">
             <div>
                 <div class="section-tag fade-in">Zakres usług</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Co wchodzi w skład<br>pielęgnacji zieleni?</h2>
+                <h2 class="section-title fade-in fade-in-delay-1">Co obejmuje nasza<br>usługa wycinkowa?</h2>
             </div>
-            <p class="section-desc fade-in fade-in-delay-2">Zakres prac dobieramy indywidualnie do każdego obiektu – od małych dziedzińców po rozległe tereny osiedlowe.</p>
+            <p class="section-desc fade-in fade-in-delay-2">Od cięć pielęgnacyjnych po kompleksową wycinkę trudnodostępnych drzew – zakres dobieramy do stanu drzewa, warunków terenu i potrzeb Klienta.</p>
         </div>
 
         <div class="scope-tabs fade-in">
-            <button class="scope-tab active" onclick="switchTab('trawniki', this)">
-                <span>🌿</span> Pielęgnacja trawników
+            <button class="scope-tab active" onclick="switchTab('sanitarne', this)">
+                <span>✂️</span> Cięcie sanitarne
             </button>
-            <button class="scope-tab" onclick="switchTab('krzewy', this)">
-                <span>✂️</span> Krzewy i żywopłoty
+            <button class="scope-tab" onclick="switchTab('wycinka', this)">
+                <span>🪓</span> Wycinka drzew
             </button>
             <button class="scope-tab" onclick="switchTab('porzadki', this)">
-                <span>🍂</span> Prace porządkowe
+                <span>🚛</span> Prace dodatkowe
             </button>
         </div>
 
-        <div class="scope-panel active" id="tab-trawniki">
+        <div class="scope-panel active" id="tab-sanitarne">
             <div class="scope-grid">
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Regularne koszenie trawników</strong>
-                        <span>Wiosna - jesień. Dostosowujemy częstotliwość do tempa wzrostu i warunków pogodowych.</span>
+                        <strong>Usuwanie martwych i chorych gałęzi</strong>
+                        <span>Eliminujemy suche, połamane i zainfekowane konary, które zagrażają bezpieczeństwu lub osłabiają drzewo. Cięcie wykonywane z podnośnika – bez ryzyka uszkodzeń podczas prac.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Wertykulacja i napowietrzanie darni</strong>
-                        <span>Usuwanie filcu i mechaniczne napowietrzanie gleby – niezbędne dla zdrowego trawnika każdej wiosny.</span>
+                        <strong>Prześwietlanie i odciążanie koron</strong>
+                        <span>Selektywne usuwanie gałęzi poprawia przepływ powietrza i doświetlenie wnętrza korony – ogranicza ryzyko wyłamania całych konarów przy wichurach.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Dosiewanie i regeneracja ubytków</strong>
-                        <span>Uzupełnianie łysych plam, dosiew trawy w miejscach przetartych przez zimę lub intensywne użytkowanie.</span>
+                        <strong>Korygowanie i formowanie korony</strong>
+                        <span>Przywracanie właściwego kształtu koron drzew o nieprawidłowym pokroju – cięcia kształtujące dla młodych drzew lub korygujące po wcześniejszych nieprawidłowych pracach.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Nawożenie trawy w sezonie</strong>
-                        <span>Nawozy mineralne lub organiczne dobierane do rodzaju gleby i pory roku – wiosenne i jesienne.</span>
+                        <strong>Odcinanie gałęzi nad budynkami i dachami</strong>
+                        <span>Bezpieczne usuwanie konarów zwisających nad dachami, rynnami i instalacjami. Podnośnik pozwala pracować precyzyjnie bez ryzyka uszkodzenia obiektu.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Odchwaszczanie</strong>
-                        <span>Mechaniczne i chemiczne usuwanie chwastów szerokolistnych oraz mchu.</span>
+                        <strong>Redukcja wysokości drzew</strong>
+                        <span>Przycinamy korony zbyt wysokich drzew zagrażających linii energetycznej, elewacji lub przysłaniających oświetlenie. Wykonujemy zgodnie z zasadami arborystycznymi.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Wywóz skoszonej trawy</strong>
-                        <span>Po każdym koszeniu zbieramy skoszoną trawę i przekazujemy ją do punktów odbioru odpadów organicznych.</span>
+                        <strong>Ocena stanu fitosanitarnego drzewa</strong>
+                        <span>Na podstawie oględzin z podnośnika oceniamy stan zdrowotny drzewa i rekomendujemy dalsze działania – czy wystarczy cięcie sanitarne, czy konieczna jest wycinka.</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="scope-panel" id="tab-krzewy">
+        <div class="scope-panel" id="tab-wycinka">
             <div class="scope-grid">
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Przycinanie i formowanie żywopłotów</strong>
-                        <span>Gatunki liściaste i iglaste - formowanie sylwetki, utrzymanie linii i odsłanianie dolnych partii.</span>
+                        <strong>Wycinka drzew zagrażających bezpieczeństwu</strong>
+                        <span>Usuwamy drzewa suche, spróchniałe lub pochylone zagrażające budynkom, chodnikowi i mieszkańcom. Oceniamy stan drzewa i dobieramy metodę bezpiecznej wycinki.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Cięcie pielęgnacyjne krzewów ozdobnych</strong>
-                        <span>Cięcia poprawiające pokrój, usuwanie gałęzi chorych, martwych lub krzyżujących się.</span>
+                        <strong>Wycinka sekcyjna z podnośnika</strong>
+                        <span>Drzewa w ciasnych lokalizacjach usuwamy metodą sekcyjną – ścinamy konar po konarze z kosza podnośnika, kontrolując kierunek opadania każdego elementu.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Usuwanie odrostów i dzikich pędów</strong>
-                        <span>Ochrona kształtu i zdrowotności roślin przez regularne usuwanie niepożądanych przyrostów.</span>
+                        <strong>Wycinka drzew przy budynkach i ogrodzeniach</strong>
+                        <span>Specjalizujemy się w usuwaniu drzew w miejscach o ograniczonym dostępie – przy elewacjach, ogrodzeniach, liniach kablowych i parkingach.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Pielęgnacja róż i bylin</strong>
-                        <span>Cięcia wiosenne i jesienne, zabezpieczanie na zimę, usuwanie przekwitłych kwiatostanów.</span>
+                        <strong>Usuwanie drzew trudnodostępnych</strong>
+                        <span>Podnośnik do 22 m umożliwia dotarcie do koron drzew, do których nie ma dostępu z ziemi. Eliminujemy konieczność wspinaczki i ryzyko z nią związane.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Sadzenie roślin sezonowych</strong>
-                        <span>Uzupełnianie rabat roślinami jednorocznymi i bylinami - dobór gatunków do warunków nasłonecznienia i gleby.</span>
+                        <strong>Frezowanie pniaków</strong>
+                        <span>Po wycince usuwamy pniak frezarką – teren zostaje wyrównany, gotowy pod wysiew trawy lub nowe nasadzenia. Nie pozostawiamy widocznych śladów po drzewie.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Wywóz gałęzi i odpadów zielonych</strong>
-                        <span>Po każdym cięciu zbieramy i wywożemy materiał roślinny - nie musisz szukać miejsca do jego składowania.</span>
+                        <strong>Pomoc w uzyskaniu pozwolenia na wycinkę</strong>
+                        <span>Przepisy wymagają zezwolenia na wycinkę większości drzew. Doradzamy w kwestii formalności i wspieramy w przygotowaniu wniosku do urzędu gminy lub miasta.</span>
                     </div>
                 </div>
             </div>
@@ -428,43 +452,43 @@ body {
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Wiosenne i jesienne grabienie liści</strong>
-                        <span>Gruntowne grabienie i wywóz liści z trawników, alejek i rabat po sezonie.</span>
+                        <strong>Zrębkowanie gałęzi na miejscu</strong>
+                        <span>Pocięte konary i gałęzie rozdrabniamy na zrębki bezpośrednio na miejscu prac. Zrębki można wykorzystać jako ściółkę ogrodową lub przekazujemy je do utylizacji.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Odchwaszczanie rabat i alejek</strong>
-                        <span>Regularne pielenie ręczne i mechaniczne - rabaty, obrzeża chodników, miejsca przy murach.</span>
+                        <strong>Wywóz drewna i gałęzi</strong>
+                        <span>Po zakończeniu prac zbieramy i wywozimy całość materiału drzewnego. Teren oddajemy uprzątnięty – bez odpadów, bez konieczności zamawiania kontenera przez Klienta.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Mulczowanie rabat</strong>
-                        <span>Ściółkowanie korą lub zrębkami drzewnymi - ogranicza wzrost chwastów i zatrzymuje wilgoć w glebie.</span>
+                        <strong>Cięcie drewna na opał</strong>
+                        <span>Na życzenie pociętą kłodę tniemy na odcinki opałowe i układamy na terenie Klienta. Drewno liściaste z wycinki to wartościowy opał – nic się nie marnuje.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Usuwanie odpadów zielonych i wywóz</strong>
-                        <span>Zbieramy i wywozimy wszystkie odpady roślinne po każdej wizycie - zostawiamy teren w idealnym porządku.</span>
+                        <strong>Uprzątnięcie terenu po pracach</strong>
+                        <span>Po każdej wycince lub cięciu sprzątamy teren – zamiatamy trociny, zbieramy drobne gałęzie i liście. Zostawiamy miejsce pracy w należytym porządku.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Czyszczenie elementów małej architektury</strong>
-                        <span>Mycie i czyszczenie ławek, donic, obrzeży rabat, krawężników i elementów ogrodowych.</span>
+                        <strong>Zabezpieczenie terenu podczas prac</strong>
+                        <span>Strefy pracy oznaczamy taśmami ostrzegawczymi. W razie potrzeby koordynujemy tymczasowe wyłączenie miejsc parkingowych lub zamknięcie fragmentu chodnika.</span>
                     </div>
                 </div>
                 <div class="scope-item">
                     <div class="scope-check">✓</div>
                     <div class="scope-text">
-                        <strong>Zabezpieczanie roślin na zimę</strong>
-                        <span>Okrywanie agrowłókniną wrażliwych gatunków, zabezpieczanie bryły korzeniowej przed mrozem.</span>
+                        <strong>Dokumentacja fotograficzna prac</strong>
+                        <span>Na życzenie dostarczamy dokumentację zdjęciową stanu drzewa przed i po pracach – przydatna przy rozliczeniach z zarządem wspólnoty lub spółdzielnią.</span>
                     </div>
                 </div>
             </div>
@@ -472,63 +496,17 @@ body {
     </div>
 </section>
 
-<!-- SEASONS -->
-<section class="section seasons-section" id="sezony">
-    <div class="section-inner">
-        <div class="section-head">
-            <div>
-                <div class="section-tag fade-in">Kalendarz prac</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Co robimy<br>w każdej porze roku?</h2>
-            </div>
-            <p class="section-desc fade-in fade-in-delay-2">Dostosowujemy zakres i intensywność prac do kalendarza ogrodniczego. Pamiętamy za Ciebie o każdym terminie.</p>
-        </div>
-        <div class="seasons-grid">
-            <div class="season-card spring fade-in">
-                <div class="season-icon">🌱</div>
-                <div class="season-name">Wiosna</div>
-                <div class="season-tasks">
-                    <div class="season-task">Gruntowne grabienie po zimie</div>
-                    <div class="season-task">Wertykulacja i nawożenie trawnika</div>
-                    <div class="season-task">Pierwsze koszenie sezonu</div>
-                    <div class="season-task">Cięcia pielęgnacyjne krzewów</div>
-                    <div class="season-task">Sadzenie roślin jednorocznych</div>
-                </div>
-            </div>
-            <div class="season-card summer fade-in fade-in-delay-1">
-                <div class="season-icon">☀️</div>
-                <div class="season-name">Lato</div>
-                <div class="season-tasks">
-                    <div class="season-task">Regularne koszenie</div>
-                    <div class="season-task">Formowanie żywopłotów</div>
-                    <div class="season-task">Podlewanie i pielenie rabat</div>
-                    <div class="season-task">Nawożenie letnie</div>
-                    <div class="season-task">Usuwanie przekwitłych kwiatów</div>
-                </div>
-            </div>
-            <div class="season-card autumn fade-in fade-in-delay-2">
-                <div class="season-icon">🍂</div>
-                <div class="season-name">Jesień</div>
-                <div class="season-tasks">
-                    <div class="season-task">Systematyczne grabienie liści</div>
-                    <div class="season-task">Cięcia pielęgnacyjne i porządkowe</div>
-                    <div class="season-task">Nawożenie jesienne trawnika</div>
-                    <div class="season-task">Sadzenie cebulek kwiatowych</div>
-                    <div class="season-task">Mulczowanie rabat na zimę</div>
-                </div>
-            </div>
-            <div class="season-card winter fade-in fade-in-delay-3">
-                <div class="season-icon">❄️</div>
-                <div class="season-name">Zima</div>
-                <div class="season-tasks">
-                    <div class="season-task">Zabezpieczanie wrażliwych roślin</div>
-                    <div class="season-task">Ocena stanu drzew i krzewów</div>
-                    <div class="season-task">Planowanie prac na kolejny sezon</div>
-                    <div class="season-task">Konsultacje i doradztwo</div>
-                </div>
-            </div>
+
+<!-- IMPORTANT NOTE -->
+<div class="note-section">
+    <div class="note-inner">
+        <div class="note-icon">⚠️</div>
+        <div class="note-body">
+            <h4>Wycinka drzew wymaga zezwolenia</h4>
+            <p>Zgodnie z obowiązującymi przepisami usunięcie drzewa o określonym obwodzie pnia wymaga uzyskania zezwolenia od urzędu gminy lub miasta. Dotyczy to zarówno nieruchomości prywatnych, jak i terenów Wspólnot i Spółdzielni. <strong>Nie ryzykuj kar.</strong></p>
         </div>
     </div>
-</section>
+</div>
 
 <!-- FOR WHOM -->
 <section class="section forwhom-section" id="dla-kogo">
@@ -536,30 +514,30 @@ body {
         <div class="section-head">
             <div>
                 <div class="section-tag fade-in">Dla kogo</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Obsługujemy obiekty<br>różnej wielkości</h2>
+                <h2 class="section-title fade-in fade-in-delay-1">Obsługujemy obiekty<br>różnego rodzaju</h2>
             </div>
-            <p class="section-desc fade-in fade-in-delay-2">Od małych dziedzińców po rozległe tereny osiedlowe – Szczecin i okolice do 40 km.</p>
+            <p class="section-desc fade-in fade-in-delay-2">Wycinka i cięcia pielęgnacyjne na terenach mieszkalnych, komercyjnych i instytucjonalnych – Szczecin i okolice do 40 km.</p>
         </div>
         <div class="fw-grid">
             <div class="fw-card fade-in">
                 <div class="fw-icon">🏘️</div>
                 <div class="fw-title">Wspólnoty mieszkaniowe</div>
-                <div class="fw-desc">Regularna pielęgnacja terenów wspólnych przez cały rok – jedno zlecenie, jeden harmonogram, bez nadzoru.</div>
+                <div class="fw-desc">Drzewa na dziedzińcach i przy budynkach wielorodzinnych – pełna obsługa od wyceny przez formalności po wywóz drewna.</div>
             </div>
             <div class="fw-card fade-in fade-in-delay-1">
                 <div class="fw-icon">🏗️</div>
                 <div class="fw-title">Spółdzielnie mieszkaniowe</div>
-                <div class="fw-desc">Obsługa wielu obiektów w ramach jednej umowy – raportowanie dla każdego budynku oddzielnie.</div>
+                <div class="fw-desc">Obsługa terenów zielonych wielu budynków w ramach jednej umowy – dokumentacja dla każdego obiektu oddzielnie.</div>
             </div>
             <div class="fw-card fade-in fade-in-delay-2">
                 <div class="fw-icon">🏢</div>
                 <div class="fw-title">Firmy i zakłady pracy</div>
-                <div class="fw-desc">Reprezentacyjne tereny zielone przy biurach i halach. Godziny dostosowane do działalności obiektu.</div>
+                <div class="fw-desc">Drzewa przy parkingach, halach i biurowcach. Prace planujemy poza godzinami szczytu, by nie zakłócać działalności.</div>
             </div>
             <div class="fw-card fade-in fade-in-delay-3">
                 <div class="fw-icon">🏛️</div>
-                <div class="fw-title">Instytucje publiczne</div>
-                <div class="fw-desc">Szkoły, przedszkola, urzędy i placówki medyczne – pełna dokumentacja do rozliczeń publicznych.</div>
+                <div class="fw-title">Instytucje i gminy</div>
+                <div class="fw-desc">Szkoły, przedszkola, drogi gminne i tereny zielone – pełna dokumentacja do przetargów i rozliczeń publicznych.</div>
             </div>
         </div>
     </div>
@@ -571,42 +549,42 @@ body {
         <div class="why-layout">
             <div>
                 <div class="section-tag fade-in">Dlaczego Lagarto</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Profesjonalna zieleń<br>bez Twojego nadzoru</h2>
+                <h2 class="section-title fade-in fade-in-delay-1">Wycinka bez stresu –<br>od formalności po uprzątnięcie</h2>
                 <div style="height:2rem"></div>
                 <div class="why-points">
                     <div class="why-point fade-in">
                         <div class="wp-num">01</div>
                         <div class="wp-body">
-                            <h4>Prowadzimy harmonogram za Ciebie</h4>
-                            <p>Sami pamiętamy o koszeniu, grabieniu i cięciach w odpowiednich terminach. Ty nie musisz nic pilnować ani przypominać.</p>
+                            <h4>Podnośnik koszowy do 22 m</h4>
+                            <p>Nie podzlecamy pracy firmy zewnętrznej – przyjeżdżamy własnym sprzętem. Niższy koszt, lepsza kontrola nad jakością i terminem realizacji.</p>
                         </div>
                     </div>
                     <div class="why-point fade-in fade-in-delay-1">
                         <div class="wp-num">02</div>
                         <div class="wp-body">
-                            <h4>Własny profesjonalny sprzęt marki STIGA</h4>
-                            <p>Pracujemy wyłącznie sprzętem marki STIGA – traktorek ogrodniczy, kosiarki spalinowe i elektryczne oraz podkaszarki. Przychodzimy w pełni wyposażeni, bez przestojów i improwizacji.</p>
+                            <h4>Pomagamy z pozwoleniem na wycinkę</h4>
+                            <p>Wyjaśniamy, kiedy zezwolenie jest wymagane i jak je uzyskać. Dla zarządców nieruchomości to oszczędność czasu i pewność, że wszystko jest zgodne z prawem.</p>
                         </div>
                     </div>
                     <div class="why-point fade-in fade-in-delay-2">
                         <div class="wp-num">03</div>
                         <div class="wp-body">
-                            <h4>Raport po każdej wizycie</h4>
-                            <p>Zarządca nieruchomości otrzymuje potwierdzenie każdej wykonanej wizyty z zakresem wykonanych prac.</p>
+                            <h4>Kompleksowa obsługa – od wyceny po wywóz</h4>
+                            <p>Przyjeżdżamy, ścinamy, zrębkujemy lub tniemy na opał i wywozimy wszystko. Teren zostawiamy czysty – bez konieczności zamawiania kontenera.</p>
                         </div>
                     </div>
                     <div class="why-point fade-in fade-in-delay-3">
                         <div class="wp-num">04</div>
                         <div class="wp-body">
-                            <h4>Szybka reakcja na zgłoszenia</h4>
-                            <p>Jeśli coś wymaga pilnej interwencji poza harmonogramem – reagujemy sprawnie, bez zbędnej biurokracji.</p>
+                            <h4>Bezpieczeństwo przede wszystkim</h4>
+                            <p>Strefa pracy jest odpowiednio zabezpieczona i oznakowana. Przed każdą wycinką oceniamy ryzyko i dobieramy metodę eliminującą zagrożenie dla otoczenia.</p>
                         </div>
                     </div>
                     <div class="why-point fade-in fade-in-delay-4">
                         <div class="wp-num">05</div>
                         <div class="wp-body">
-                            <h4>Kompleksowość – wszystko w jednym miejscu</h4>
-                            <p>Łączymy usługi ogrodnicze ze sprzątaniem budynku, wywozem gabarytów i DDD – jedna umowa, jeden kontakt.</p>
+                            <h4>Powiązane usługi ogrodnicze i porządkowe</h4>
+                            <p>Łączymy wycinkę z pielęgnacją zieleni, sprzątaniem terenu i wywozem gabarytów – jedna umowa, jeden kontakt dla zarządcy nieruchomości.</p>
                         </div>
                     </div>
                 </div>
@@ -614,8 +592,8 @@ body {
             <div class="fade-in fade-in-delay-2">
                 <div class="why-cta-box">
                     <div class="wcb-tag">Bezpłatna wycena</div>
-                    <div class="wcb-title">Przyjedziemy ocenić Twój teren</div>
-                    <div class="wcb-desc">Oceniamy wielkość i stan terenów zielonych, doradzamy zakres i częstotliwość prac – oferta bez zobowiązań w ciągu 24h.</div>
+                    <div class="wcb-title">Przyjedziemy ocenić drzewa na Twoim terenie</div>
+                    <div class="wcb-desc">Oceniamy stan drzew, doradzamy zakres prac i wyjaśniamy kwestię pozwolenia – oferta bez zobowiązań w ciągu 24h.</div>
                     <div class="wcb-contact">
                         <a href="tel:535483411" class="wcb-row">
                             <div class="wcb-row-icon">📞</div>
@@ -641,80 +619,46 @@ body {
     </div>
 </section>
 
-<!-- STIGA EQUIPMENT -->
-<section class="section" id="sprzet" style="background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 2rem;">
-    <div class="section-inner">
-        <div class="section-head">
-            <div>
-                <div class="section-tag fade-in">Nasz sprzęt</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Pracujemy sprzętem<br>marki <em style="font-style:normal; color: var(--accent);">STIGA</em></h2>
-            </div>
-            <p class="section-desc fade-in fade-in-delay-2">Inwestujemy w sprawdzony, profesjonalny sprzęt ogrodniczy – bo jakość narzędzi przekłada się bezpośrednio na jakość efektów pracy.</p>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;" class="fade-in">
-            <div style="background: var(--white); padding: 2.2rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s;" onmouseover="this.style.background='var(--gray-50)'" onmouseout="this.style.background='var(--white)'">
-                <div style="width: 52px; height: 52px; background: var(--accent-pale); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">🚜</div>
-                <div>
-                    <div style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem;">STIGA</div>
-                    <div style="font-size: 1rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 0.5rem;">Traktorek ogrodniczy</div>
-                    <p style="font-size: 0.82rem; color: var(--gray-500); line-height: 1.65;">Traktorek STIGA umożliwia efektywne koszenie dużych powierzchni trawiastych – idealny do obsługi terenów osiedlowych, parków i obiektów komercyjnych.</p>
-                </div>
-            </div>
-            <div style="background: var(--white); padding: 2.2rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s;" onmouseover="this.style.background='var(--gray-50)'" onmouseout="this.style.background='var(--white)'">
-                <div style="width: 52px; height: 52px; background: var(--accent-pale); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">🌿</div>
-                <div>
-                    <div style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem;">STIGA</div>
-                    <div style="font-size: 1rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 0.5rem;">Kosiarki</div>
-                    <p style="font-size: 0.82rem; color: var(--gray-500); line-height: 1.65;">Kosiarki STIGA do precyzyjnego koszenia trawników – zapewniają równe, estetyczne cięcie zarówno na dużych powierzchniach, jak i w trudno dostępnych miejscach.</p>
-                </div>
-            </div>
-            <div style="background: var(--white); padding: 2.2rem 2rem; display: flex; flex-direction: column; gap: 1rem; transition: background 0.2s;" onmouseover="this.style.background='var(--gray-50)'" onmouseout="this.style.background='var(--white)'">
-                <div style="width: 52px; height: 52px; background: var(--accent-pale); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">✂️</div>
-                <div>
-                    <div style="font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.4rem;">STIGA</div>
-                    <div style="font-size: 1rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 0.5rem;">Podkaszarki</div>
-                    <p style="font-size: 0.82rem; color: var(--gray-500); line-height: 1.65;">Podkaszarki STIGA do precyzyjnego wykończenia krawędzi trawnika, obrzeży rabat, murków i płotów – tam, gdzie kosiarka nie dotrze.</p>
-                </div>
-            </div>
-        </div>
-        <p style="margin-top: 1.5rem; font-size: 0.78rem; color: var(--gray-500); text-align: center;" class="fade-in">Cały sprzęt jest regularnie serwisowany i utrzymywany w pełnej sprawności technicznej.</p>
-    </div>
-</section>
-
 <!-- PROCESS -->
 <section class="section process-section" id="jak-zaczac">
     <div class="section-inner">
         <div class="section-head">
             <div>
-                <div class="section-tag fade-in">Jak zacząć</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Od pierwszego kontaktu<br>do zadbanych terenów</h2>
+                <div class="section-tag fade-in">Jak działamy</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Od pierwszego kontaktu<br>do uprzątnięcia terenu</h2>
             </div>
-            <p class="section-desc fade-in fade-in-delay-2">Wystarczy jeden telefon. Ustalamy zakres, podpisujemy umowę i regularnie realizujemy prace – bez konieczności nadzoru.</p>
+            <p class="section-desc fade-in fade-in-delay-2">Wystarczy jeden telefon lub mail. Przyjeżdżamy, oceniamy drzewa, wyjaśniamy formalności i realizujemy całość – bez zbędnego zachodu po Twojej stronie.</p>
         </div>
         <div class="process-steps">
             <div class="ps-step fade-in">
                 <div class="ps-num">01</div>
                 <div class="ps-icon">📞</div>
                 <div class="ps-title">Kontakt i oględziny</div>
-                <p class="ps-desc">Przyjeżdżamy ocenić wielkość i stan terenów zielonych. Bezpłatnie, bez zobowiązań.</p>
+                <p class="ps-desc">Przyjeżdżamy obejrzeć drzewa na miejscu. Oceniamy ich stan, lokalizację i ewentualne zagrożenia – bezpłatnie, bez zobowiązań.</p>
             </div>
             <div class="ps-step fade-in fade-in-delay-1">
                 <div class="ps-num">02</div>
-                <div class="ps-icon">📄</div>
-                <div class="ps-title">Bezpłatna wycena</div>
-                <p class="ps-desc">Oferta dopasowana do zakresu prac i częstotliwości obsługi – cena jednostkowa lepsza przy umowie rocznej.</p>
+                <div class="ps-icon">📋</div>
+                <div class="ps-title">Formalności</div>
+                <p class="ps-desc">Informujemy, czy wymagane jest zezwolenie na wycinkę. Pomagamy sprawdzić procedurę i przygotować wniosek do urzędu.</p>
             </div>
             <div class="ps-step fade-in fade-in-delay-2">
                 <div class="ps-num">03</div>
-                <div class="ps-icon">🗓️</div>
-                <div class="ps-title">Umowa i harmonogram</div>
-                <p class="ps-desc">Ustalamy plan prac na cały sezon lub rok. Ty masz pewność, że nic nie zostanie pominięte.</p>
+                <div class="ps-icon">📄</div>
+                <div class="ps-title">Wycena i umowa</div>
+                <p class="ps-desc">Oferta dopasowana do zakresu prac – cięcie sanitarne, wycinka lub kompleks. Kontrakt z jasno określonym zakresem i terminem.</p>
             </div>
             <div class="ps-step fade-in fade-in-delay-3">
                 <div class="ps-num">04</div>
+                <div class="ps-icon">🏗️</div>
+                <div class="ps-title">Realizacja z podnośnikiem</div>
+                <p class="ps-desc">Przyjeżdżamy z podnośnikiem koszowym i niezbędnym sprzętem. Teren zabezpieczamy, prace wykonujemy sprawnie i bezpiecznie.</p>
+            </div>
+            <div class="ps-step fade-in fade-in-delay-4">
+                <div class="ps-num">05</div>
                 <div class="ps-icon">✅</div>
-                <div class="ps-title">Regularna realizacja</div>
-                <p class="ps-desc">Przyjeżdżamy zgodnie z harmonogramem bez przypominania. Po każdej wizycie raport z wykonanych prac.</p>
+                <div class="ps-title">Wywóz i uprzątnięcie</div>
+                <p class="ps-desc">Drewno tniemy, zrębkujemy lub wywozimy. Frezujemy pniaki na życzenie. Teren oddajemy w pełni uprzątnięty.</p>
             </div>
         </div>
     </div>
@@ -726,34 +670,34 @@ body {
         <div class="section-head">
             <div>
                 <div class="section-tag fade-in">Galeria</div>
-                <h2 class="section-title fade-in fade-in-delay-1">Nasze realizacje –<br>zadbane tereny zielone</h2>
+                <h2 class="section-title fade-in fade-in-delay-1">Nasze realizacje –<br>wycinka i pielęgnacja drzew</h2>
             </div>
-            <p class="section-desc fade-in fade-in-delay-2">Trawniki, żywopłoty, rabaty i tereny osiedlowe – przykłady z naszych realizacji w Szczecinie i okolicach.</p>
+            <p class="section-desc fade-in fade-in-delay-2">Prace przy budynkach, na dziedzińcach i przy drogach – przykłady realizacji w Szczecinie i okolicach.</p>
         </div>
         <div class="gallery-grid fade-in">
             <div class="gallery-item g1" onclick="openLightbox(0)">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=900&q=80" alt="Zadbany trawnik przy budynku wielorodzinnym">
-                <div class="g-overlay"><span class="g-caption">Trawnik – osiedle mieszkaniowe Szczecin</span></div>
+                <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=900&q=80" alt="Wycinka drzewa przy budynku z podnośnikiem">
+                <div class="g-overlay"><span class="g-caption">Wycinka sekcyjna przy bloku mieszkalnym – Szczecin</span></div>
             </div>
             <div class="gallery-item g2" onclick="openLightbox(1)">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Koszenie trawnika kosiarką">
-                <div class="g-overlay"><span class="g-caption">Regularne koszenie w szczycie sezonu</span></div>
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=80" alt="Pielęgnacja koron drzew">
+                <div class="g-overlay"><span class="g-caption">Cięcie sanitarne – usuwanie suchych konarów</span></div>
             </div>
             <div class="gallery-item g3" onclick="openLightbox(2)">
-                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=700&q=80" alt="Przycięty żywopłot przy budynku">
-                <div class="g-overlay"><span class="g-caption">Formowanie żywopłotu – blok Pogodno</span></div>
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=700&q=80" alt="Stare drzewo w lesie">
+                <div class="g-overlay"><span class="g-caption">Ocena stanu fitosanitarnego drzewa</span></div>
             </div>
             <div class="gallery-item g4" onclick="openLightbox(3)">
-                <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=600&q=80" alt="Grabienie liści na terenie wspólnoty">
-                <div class="g-overlay"><span class="g-caption">Jesienne grabienie liści</span></div>
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Tereny zielone po pracach">
+                <div class="g-overlay"><span class="g-caption">Teren po wycince – posprzątany gotowy do zasiewu</span></div>
             </div>
             <div class="gallery-item g5" onclick="openLightbox(4)">
-                <img src="https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=600&q=80" alt="Rabata z kwiatami przy wejściu do budynku">
-                <div class="g-overlay"><span class="g-caption">Pielęgnacja rabat – wiosna</span></div>
+                <img src="https://images.unsplash.com/photo-1513836279014-a89f7d76ef86?w=600&q=80" alt="Sosny wysokie">
+                <div class="g-overlay"><span class="g-caption">Redukcja wysokości topoli przy linii energetycznej</span></div>
             </div>
             <div class="gallery-item g6" onclick="openLightbox(5)">
-                <img src="https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?w=600&q=80" alt="Teren zielony wokół biurowca">
-                <div class="g-overlay"><span class="g-caption">Tereny przy obiekcie komercyjnym</span></div>
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80" alt="Las i drzewa">
+                <div class="g-overlay"><span class="g-caption">Pielęgnacja drzew na terenie osiedla mieszkaniowego</span></div>
             </div>
         </div>
     </div>
@@ -779,28 +723,32 @@ body {
         </div>
         <div class="faq-list fade-in">
             <div class="faq-item">
-                <div class="faq-q">Jak często koszone są trawniki w ramach stałej umowy?</div>
-                <div class="faq-a">W szczycie sezonu wegetacyjnego (maj–sierpień) standardowo co 10–14 dni. Wiosną i jesienią, gdy trawa rośnie wolniej, dostosowujemy częstotliwość do aktualnych warunków. Zawsze reagujemy na zgłoszenia, gdy trawa wymaga pilniejszego koszenia.</div>
+                <div class="faq-q">Czy do wycinki drzewa potrzebne jest pozwolenie?</div>
+                <div class="faq-a">Tak, w większości przypadków usunięcie drzewa wymaga zezwolenia wydanego przez urząd gminy lub miasta. Obowiązek ten dotyczy drzew o określonym obwodzie pnia mierzonym na wysokości 130 cm – próg uzależniony jest od gatunku drzewa. Wyjątki dotyczą m.in. drzew zagrażających bezpieczeństwu czy rośnących na cele gospodarcze. Zadzwoń do nas – pomożemy ustalić, czy w Twoim przypadku wymagane jest pozwolenie i jak je uzyskać.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Czy zajmujecie się wywozem skoszonej trawy i liści?</div>
-                <div class="faq-a">Tak – wywóz odpadów zielonych jest standardowo wliczony w zakres usługi. Po każdym koszeniu lub grabieniu zbieramy materiał roślinny i przekazujemy go do odpowiednich punktów odbioru odpadów organicznych.</div>
+                <div class="faq-q">Na jaką wysokość sięga Wasz podnośnik koszowy?</div>
+                <div class="faq-a">Nasz podnośnik koszowy osiąga zasięg roboczy do 22 metrów. Oznacza to, że możemy bezpiecznie pracować w koronach wysokich drzew, takich jak lipy, klony, dęby i topole – najczęściej spotykane na terenach osiedlowych i przydrożnych w Szczecinie. Dla większości drzew rosnących przy budynkach mieszkalnych i na dziedzińcach nasz sprzęt w pełni wystarczy.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Czy możecie zadbać o tereny zielone przy biurze lub zakładzie pracy?</div>
-                <div class="faq-a">Tak – obsługujemy zarówno nieruchomości mieszkalne, jak i komercyjne. Dla firm możemy dostosować godziny prac tak, aby nie zakłócać codziennej działalności (np. wczesne godziny ranne lub późne popołudnia).</div>
+                <div class="faq-q">Co to jest cięcie sanitarne i czym różni się od wycinki?</div>
+                <div class="faq-a">Cięcie sanitarne polega na usunięciu martwych, chorych, połamanych lub zagrażających bezpieczeństwu gałęzi i konarów – drzewo pozostaje na miejscu, a zabieg poprawia jego zdrowotność i bezpieczeństwo otoczenia. Wycinka oznacza usunięcie całego drzewa. Często zaczynamy od oceny stanu drzewa – dopiero wtedy rekomendujemy cięcie sanitarne lub wycinkę, zależnie od tego, co jest uzasadnione.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Czy świadczycie usługi jednorazowo, czy wymagana jest umowa?</div>
-                <div class="faq-a">Oferujemy oba modele. Możemy wykonać jednorazową usługę (np. wiosenne porządki lub grabienie po sezonie), jak i podpisać umowę na stałą obsługę przez cały rok. Przy umowie rocznej oferujemy korzystniejsze warunki cenowe.</div>
+                <div class="faq-q">Co dzieje się z drewnem i gałęziami po wycince?</div>
+                <div class="faq-a">Po zakończeniu prac mamy kilka opcji: gałęzie zrębkujemy na miejscu (zrębki można zostawić jako ściółkę lub wywieziemy je), grubsze kłody tniemy na odcinki opałowe na życzenie Klienta, lub wywozimy całość drewna. Teren jest w pełni uprzątnięty po zakończeniu prac – nie zostawiamy odpadów ani trocin.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Obsługujecie tylko Szczecin czy też okoliczne miejscowości?</div>
-                <div class="faq-a">Obsługujemy Szczecin oraz miejscowości w promieniu około 40 km, m.in. Policę, Goleniów, Stargard, Gryfino i okoliczne gminy. Jeśli nie jesteś pewny, czy dotrzemy do Twojego obiektu – zadzwoń, sprawdzimy to razem.</div>
+                <div class="faq-q">Czy podnośnik nie uszkodzi trawnika lub nawierzchni?</div>
+                <div class="faq-a">Podnośnik ustawiamy na utwardzonej nawierzchni – chodniku, jezdni lub placu. Dzięki temu nie wyjeżdżamy na trawniki ani rabaty. Jeśli dostęp wymaga wjazdu na nieutwardzone podłoże, omawiamy to przy oględzinach i szukamy rozwiązania minimalizującego ingerencję w teren.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Czy zajmujecie się sadzeniem roślin i projektowaniem ogrodu?</div>
-                <div class="faq-a">Realizujemy prace związane z sadzeniem roślin sezonowych, dosiewaniem trawy i uzupełnianiem rabat. Kompleksowego projektowania ogrodów od podstaw aktualnie nie oferujemy, natomiast chętnie doradzimy w doborze roślin odpowiednich dla danego miejsca.</div>
+                <div class="faq-q">Czy wykonujecie frezowanie pniaków po wycince?</div>
+                <div class="faq-a">Tak, frezowanie pniaków jest dostępne jako usługa dodatkowa. Pniak zostaje rozdrobniony do poziomu gruntu lub poniżej, co pozwala wyrównać teren i przygotować go pod nowe nasadzenia lub wysiew trawy. Koszt frezowania zależy od średnicy pniaka – podajemy go przy wycenie.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Jak szybko możecie przyjechać na wycinkę pilną – np. po złamanym drzewie?</div>
+                <div class="faq-a">W sytuacjach zagrożenia bezpieczeństwa – np. złamane drzewo blokujące wjazd lub zwisający konar nad dachem – staramy się reagować tak szybko, jak to możliwe. Zadzwoń pod numer 535 483 411 i opisz sytuację – ustalimy termin interwencji.</div>
             </div>
         </div>
     </div>
@@ -816,28 +764,28 @@ body {
             </div>
         </div>
         <div class="related-grid">
-            <a href="/uslugi-porzadkowe/" class="rel-card fade-in">
-                <div class="rel-icon">🧹</div>
-                <div class="rel-name">Sprzątanie budynków</div>
-                <div class="rel-desc">Klatki schodowe, korytarze i tereny zewnętrzne – regularne utrzymanie czystości.</div>
+            <a href="uslugi-ogrodnicze.html" class="rel-card fade-in">
+                <div class="rel-icon">🌿</div>
+                <div class="rel-name">Usługi ogrodnicze</div>
+                <div class="rel-desc">Koszenie trawników, formowanie żywopłotów, grabienie liści – pielęgnacja zieleni przez cały rok.</div>
                 <div class="rel-link">Dowiedz się więcej →</div>
             </a>
-            <a href="/wywoz-gabarytow/" class="rel-card fade-in fade-in-delay-1">
+            <a href="wywoz-gabarytow.html" class="rel-card fade-in fade-in-delay-1">
                 <div class="rel-icon">🚛</div>
                 <div class="rel-name">Wywóz gabarytów</div>
                 <div class="rel-desc">Meble, AGD, gruz i opróżnianie piwnic – legalna utylizacja z numerem BDO.</div>
                 <div class="rel-link">Dowiedz się więcej →</div>
             </a>
-            <a href="/czyszczenie-elewacji/" class="rel-card fade-in fade-in-delay-2">
+            <a href="czyszczenie-elewacji.html" class="rel-card fade-in fade-in-delay-2">
                 <div class="rel-icon">🏗️</div>
                 <div class="rel-name">Mycie elewacji</div>
                 <div class="rel-desc">Profesjonalne czyszczenie elewacji – ciśnieniowe, chemiczne i ręczne.</div>
                 <div class="rel-link">Dowiedz się więcej →</div>
             </a>
-            <a href="/uslugi-ddd/" class="rel-card fade-in fade-in-delay-3">
-                <div class="rel-icon">🛡️</div>
-                <div class="rel-name">Usługi DDD</div>
-                <div class="rel-desc">Dezynfekcja, dezynsekcja i deratyzacja – atestowane środki, certyfikowani specjaliści.</div>
+            <a href="utrzymanie-obiektow.html" class="rel-card fade-in fade-in-delay-3">
+                <div class="rel-icon">🏢</div>
+                <div class="rel-name">Utrzymanie obiektów</div>
+                <div class="rel-desc">Kompleksowe utrzymanie czystości i porządku na terenie nieruchomości.</div>
                 <div class="rel-link">Dowiedz się więcej →</div>
             </a>
         </div>
@@ -848,8 +796,8 @@ body {
 <section class="cta-section" id="kontakt">
     <div class="cta-inner">
         <div class="cta-left fade-in">
-            <h2>Zamów bezpłatną wycenę usług ogrodniczych</h2>
-            <p>Przyjedziemy ocenić Twoje tereny zielone i przygotować ofertę dopasowaną do zakresu i częstotliwości prac – bez zobowiązań, w ciągu 24 godzin.</p>
+            <h2>Zamów bezpłatną wycenę wycinki lub cięcia drzew</h2>
+            <p>Przyjedziemy obejrzeć drzewa na Twoim terenie, doradzamy zakres prac i wyjaśniamy kwestię pozwolenia – oferta bez zobowiązań w ciągu 24 godzin. Własny podnośnik do 22 m.</p>
         </div>
         <div class="cta-right fade-in fade-in-delay-2">
             <a href="tel:535483411" class="contact-row">
@@ -884,12 +832,14 @@ body {
         <div>
             <p class="footer-col-title">Usługi</p>
             <ul class="footer-links">
-                <li><a href="/uslugi-porzadkowe/">Usługi porządkowe</a></li>
-                <li><a href="/wywoz-gabarytow/">Wywóz gabarytów</a></li>
-                <li><a href="#">Usługi ogrodnicze</a></li>
-                <li><a href="/maszynowe-doczyszczanie/">Maszynowe czyszczenie</a></li>
-                <li><a href="/czyszczenie-elewacji/">Mycie elewacji</a></li>
-                <li><a href="/uslugi-ddd/">Usługi DDD</a></li>
+                <li><a href="utrzymanie-obiektow.html">Utrzymanie obiektów</a></li>
+                <li><a href="wywoz-gabarytow.html">Wywóz gabarytów</a></li>
+                <li><a href="uslugi-ogrodnicze.html">Usługi ogrodnicze</a></li>
+                <li><a href="#">Wycinka drzew</a></li>
+                <li><a href="maszynowe-czyszczenie.html">Maszynowe czyszczenie</a></li>
+                <li><a href="czyszczenie-elewacji.html">Mycie elewacji</a></li>
+                <li><a href="uslugi-ddd.html">Usługi DDD</a></li>
+                <li><a href="mycie-okien.html">Mycie okien</a></li>
             </ul>
         </div>
         <div>
@@ -919,7 +869,7 @@ body {
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 Lagarto — Usługi ogrodnicze · Koszenie trawników · Szczecin</p>
+        <p>© 2025 Lagarto — Wycinka drzew · Cięcie sanitarne · Podnośnik koszowy · Szczecin</p>
         <p><a href="#">Polityka prywatności</a> · <a href="#">Warunki usługi</a></p>
     </div>
 </footer>
@@ -971,12 +921,12 @@ document.querySelectorAll('.faq-q').forEach(q => {
 
 // Lightbox
 const lbImages = [
-    { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=90', caption: 'Trawnik – osiedle mieszkaniowe Szczecin' },
-    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90', caption: 'Regularne koszenie w szczycie sezonu' },
-    { src: 'https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=90', caption: 'Formowanie żywopłotu – blok Pogodno' },
-    { src: 'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1200&q=90', caption: 'Jesienne grabienie liści' },
-    { src: 'https://images.unsplash.com/photo-1591857177580-dc82b9ac4e1e?w=1200&q=90', caption: 'Pielęgnacja rabat – wiosna' },
-    { src: 'https://images.unsplash.com/photo-1567653418876-5bb0e566e1c2?w=1200&q=90', caption: 'Tereny przy obiekcie komercyjnym' },
+    { src: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=90', caption: 'Wycinka sekcyjna przy bloku mieszkalnym – Szczecin' },
+    { src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=90', caption: 'Cięcie sanitarne – usuwanie suchych konarów' },
+    { src: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=90', caption: 'Ocena stanu fitosanitarnego drzewa' },
+    { src: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=90', caption: 'Teren po wycince – posprzątany gotowy do zasiewu' },
+    { src: 'https://images.unsplash.com/photo-1513836279014-a89f7d76ef86?w=1200&q=90', caption: 'Redukcja wysokości topoli przy linii energetycznej' },
+    { src: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=90', caption: 'Pielęgnacja drzew na terenie osiedla mieszkaniowego' },
 ];
 let lbCurrent = 0;
 function openLightbox(idx) {

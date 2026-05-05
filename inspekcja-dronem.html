@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inspekcja dronowa rynien, dachów i elewacji w Szczecinie | Lagarto</title>
+<meta name="description" content="Profesjonalna inspekcja dronowa budynków w Szczecinie. Kontrola stanu rynien, dachów i elewacji bez rusztowań. Szczegółowy raport zdjęciowy. Wycena gratis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --black: #111111;
+    --gray-900: #1a1a1a;
+    --gray-700: #444444;
+    --gray-500: #777777;
+    --gray-300: #bbbbbb;
+    --gray-100: #f5f5f5;
+    --gray-50: #fafafa;
+    --white: #ffffff;
+    --accent: #2d6a4f;
+    --accent-light: #52b788;
+    --accent-pale: #d8f3dc;
+    --border: #e8e8e8;
+    --radius: 4px;
+    --radius-lg: 8px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--black); font-size: 16px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ── */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-size: 1.25rem; font-weight: 800; color: var(--black); text-decoration: none; letter-spacing: -0.03em; display: flex; align-items: center; gap: 10px; }
+.nav-logo .logo-mark { width: 32px; height: 32px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.9rem; font-weight: 800; }
+.nav-links { display: flex; align-items: center; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--gray-700); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
+.nav-links a:hover { color: var(--black); }
+.nav-cta { background: var(--black) !important; color: var(--white) !important; padding: 9px 22px; border-radius: var(--radius); font-weight: 600 !important; font-size: 0.82rem !important; letter-spacing: 0.02em; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--gray-900) !important; }
+.nav-mobile-toggle { display: none; background: none; border: 1px solid var(--border); padding: 8px; border-radius: var(--radius); cursor: pointer; color: var(--black); font-size: 1.2rem; }
+@media (max-width: 768px) { .nav-links { display: none; } .nav-mobile-toggle { display: flex; align-items: center; } }
+
+/* ── HERO ── */
+.hero { padding-top: 64px; min-height: 62vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero-bg-photo { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1600&q=80'); background-size: cover; background-position: center 40%; z-index: 0; }
+.hero-bg-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.68) 55%, rgba(0,0,0,0.38) 100%); }
+.hero-inner { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; width: 100%; }
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.45); margin-bottom: 1.5rem; }
+.breadcrumb a { color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.8); }
+.breadcrumb span { color: rgba(255,255,255,0.25); }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-light); margin-bottom: 1.2rem; }
+.hero-eyebrow::before { content: ''; display: block; width: 24px; height: 2px; background: var(--accent-light); }
+.hero h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.04em; color: var(--white); margin-bottom: 1.2rem; max-width: 680px; }
+.hero h1 em { font-style: normal; color: var(--accent-light); }
+.hero-desc { font-size: 1rem; color: rgba(255,255,255,0.68); line-height: 1.75; margin-bottom: 2rem; max-width: 500px; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; border-radius: var(--radius); font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; letter-spacing: 0.01em; }
+.btn-dark { background: var(--white); color: var(--black); }
+.btn-dark:hover { background: var(--gray-100); }
+.btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.35); }
+.btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.08); }
+.hero-trust { display: flex; gap: 1.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.12); flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+.trust-item .ti-icon { width: 28px; height: 28px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--accent-light); }
+
+/* ── STATS ── */
+.stats { background: var(--black); padding: 3rem 2rem; }
+.stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+.stat { padding: 1rem 2rem; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
+.stat:last-child { border-right: none; }
+.stat-num { font-size: 2.2rem; font-weight: 800; color: var(--white); letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.3rem; }
+.stat-num .accent { color: var(--accent-light); }
+.stat-label { font-size: 0.73rem; color: rgba(255,255,255,0.38); line-height: 1.4; }
+@media (max-width: 700px) { .stats-inner { grid-template-columns: 1fr 1fr; } .stat { border-bottom: 1px solid rgba(255,255,255,0.08); } }
+
+/* ── SECTION ── */
+.section { padding: 5.5rem 2rem; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 1rem; }
+.section-tag::before { content: ''; display: block; width: 20px; height: 2px; background: var(--accent); }
+.section-title { font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -0.03em; color: var(--black); line-height: 1.15; margin-bottom: 1rem; }
+.section-desc { font-size: 1rem; color: var(--gray-500); line-height: 1.75; max-width: 540px; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: 3.5rem; flex-wrap: wrap; }
+
+/* ── SCOPE CARDS ── */
+.scope-section { background: var(--gray-50); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.scope-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.scope-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: box-shadow 0.25s, transform 0.25s; }
+.scope-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.08); transform: translateY(-3px); }
+.scope-card-img { height: 200px; overflow: hidden; position: relative; }
+.scope-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
+.scope-card:hover .scope-card-img img { transform: scale(1.04); }
+.scope-card-badge { position: absolute; top: 12px; left: 12px; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; background: var(--accent); color: var(--white); padding: 4px 12px; border-radius: 20px; }
+.scope-card-body { padding: 1.8rem; }
+.scope-card-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+.scope-card-title { font-size: 1.05rem; font-weight: 800; color: var(--black); letter-spacing: -0.03em; margin-bottom: 0.6rem; }
+.scope-card-desc { font-size: 0.82rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 1.2rem; }
+.scope-checks { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.scope-checks li { display: flex; gap: 8px; align-items: flex-start; font-size: 0.8rem; color: var(--gray-700); line-height: 1.5; }
+.scope-checks li::before { content: '✓'; font-size: 0.7rem; font-weight: 700; color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+@media (max-width: 900px) { .scope-grid { grid-template-columns: 1fr; } }
+
+/* ── ADVANTAGES ── */
+.adv-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.adv-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.adv-list { display: flex; flex-direction: column; }
+.adv-item { display: flex; gap: 1.5rem; padding: 1.6rem 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.adv-item:first-child { padding-top: 0; }
+.adv-item:last-child { border-bottom: none; }
+.adv-num { font-size: 0.7rem; font-weight: 700; color: var(--gray-300); letter-spacing: 0.05em; padding-top: 2px; min-width: 24px; }
+.adv-body h4 { font-size: 0.93rem; font-weight: 700; color: var(--black); margin-bottom: 0.3rem; letter-spacing: -0.02em; }
+.adv-body p { font-size: 0.82rem; color: var(--gray-500); line-height: 1.65; }
+.adv-cta-box { background: var(--black); border-radius: var(--radius-lg); padding: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: sticky; top: 88px; }
+.acb-tag { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent-light); }
+.acb-title { font-size: 1.4rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1.2; }
+.acb-desc { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.65; }
+.acb-contact { display: flex; flex-direction: column; gap: 0.8rem; }
+.acb-row { display: flex; align-items: center; gap: 12px; text-decoration: none; padding: 1rem; border-radius: var(--radius); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); transition: all 0.2s; }
+.acb-row:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); }
+.acb-row-icon { width: 32px; height: 32px; background: rgba(255,255,255,0.08); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.acb-row-text { flex: 1; }
+.acb-row-text span { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
+.acb-row-text strong { font-size: 0.88rem; color: var(--white); font-weight: 600; }
+.acb-row-arrow { color: rgba(255,255,255,0.3); font-size: 0.9rem; }
+.acb-note { font-size: 0.72rem; color: rgba(255,255,255,0.3); line-height: 1.6; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08); }
+@media (max-width: 900px) { .adv-layout { grid-template-columns: 1fr; gap: 2.5rem; } .adv-cta-box { position: static; } }
+
+/* ── FOR WHOM ── */
+.forwhom-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.fw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.fw-card { padding: 1.8rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--white); transition: all 0.25s; }
+.fw-card:hover { border-color: var(--gray-300); box-shadow: 0 4px 16px rgba(0,0,0,0.06); transform: translateY(-2px); }
+.fw-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+.fw-title { font-size: 0.95rem; font-weight: 700; color: var(--black); margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+.fw-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.7; }
+@media (max-width: 900px) { .fw-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .fw-grid { grid-template-columns: 1fr; } }
+
+/* ── PROCESS ── */
+.process-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.ps-step { background: var(--white); padding: 2.2rem 2rem; }
+.ps-num { font-size: 0.68rem; font-weight: 700; color: var(--gray-300); letter-spacing: 0.1em; margin-bottom: 1.2rem; }
+.ps-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+.ps-title { font-size: 0.95rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+.ps-desc { font-size: 0.8rem; color: var(--gray-500); line-height: 1.65; }
+@media (max-width: 1000px) { .process-steps { grid-template-columns: 1fr 1fr 1fr; } }
+@media (max-width: 580px) { .process-steps { grid-template-columns: 1fr; } }
+
+/* ── REPORT SECTION ── */
+.report-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.report-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.report-preview { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.report-preview-header { background: var(--black); padding: 1.2rem 1.8rem; display: flex; align-items: center; gap: 10px; }
+.report-preview-header .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); }
+.report-preview-header .dot.green { background: var(--accent-light); }
+.report-preview-title { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-left: 8px; }
+.report-body { padding: 1.8rem; display: flex; flex-direction: column; gap: 1rem; }
+.report-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--gray-50); }
+.report-row-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.report-row-body strong { display: block; font-size: 0.85rem; font-weight: 700; color: var(--black); margin-bottom: 0.2rem; }
+.report-row-body span { font-size: 0.75rem; color: var(--gray-500); line-height: 1.55; }
+.report-row-status { margin-left: auto; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+.status-ok { background: #d8f3dc; color: #2d6a4f; }
+.status-warn { background: #fff3cd; color: #856404; }
+.status-bad { background: #ffe0e0; color: #b91c1c; }
+.report-features { display: flex; flex-direction: column; gap: 0; }
+.rf-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1rem; align-items: flex-start; }
+.rf-item:last-child { border-bottom: none; }
+.rf-icon { width: 36px; height: 36px; background: var(--accent-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.rf-body strong { display: block; font-size: 0.9rem; font-weight: 700; color: var(--black); margin-bottom: 0.2rem; }
+.rf-body span { font-size: 0.8rem; color: var(--gray-500); line-height: 1.6; }
+@media (max-width: 900px) { .report-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ── DRONE SPECS ── */
+.specs-section { background: var(--black); padding: 5.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.specs-inner { max-width: 1200px; margin: 0 auto; }
+.specs-section .section-tag { color: var(--accent-light); }
+.specs-section .section-tag::before { background: var(--accent-light); }
+.specs-section .section-title { color: var(--white); }
+.specs-section .section-desc { color: rgba(255,255,255,0.45); }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.specs-model-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); overflow: hidden; }
+.specs-model-header { background: rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 1.6rem 2rem; display: flex; align-items: center; gap: 1.2rem; }
+.specs-model-icon { width: 48px; height: 48px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.specs-model-name { font-size: 0.7rem; color: rgba(255,255,255,0.35); margin-bottom: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+.specs-model-title { font-size: 1rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+.specs-table { display: flex; flex-direction: column; }
+.specs-row { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); gap: 1rem; }
+.specs-row:last-child { border-bottom: none; }
+.specs-key { font-size: 0.78rem; color: rgba(255,255,255,0.38); flex-shrink: 0; }
+.specs-val { font-size: 0.82rem; font-weight: 700; color: var(--white); text-align: right; }
+.specs-val .highlight { color: var(--accent-light); }
+.specs-features { display: flex; flex-direction: column; gap: 0; }
+.sf-item { padding: 1.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; gap: 1rem; align-items: flex-start; }
+.sf-item:last-child { border-bottom: none; }
+.sf-icon { width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.sf-body strong { display: block; font-size: 0.88rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; letter-spacing: -0.01em; }
+.sf-body span { font-size: 0.78rem; color: rgba(255,255,255,0.45); line-height: 1.6; }
+.specs-note { margin-top: 2rem; padding: 1.2rem 1.6rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); font-size: 0.75rem; color: rgba(255,255,255,0.35); line-height: 1.7; display: flex; gap: 10px; }
+.specs-note::before { content: '⚠'; flex-shrink: 0; color: #f59e0b; }
+@media (max-width: 900px) { .specs-layout { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ── PRICING ── */
+.pricing-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.promo-banner { background: linear-gradient(135deg, var(--accent) 0%, #1b4332 100%); border-radius: var(--radius-lg); padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 3rem; flex-wrap: wrap; }
+.promo-banner-left { display: flex; align-items: center; gap: 14px; }
+.promo-fire { font-size: 1.6rem; animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+.promo-text strong { display: block; font-size: 0.95rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+.promo-text span { font-size: 0.8rem; color: rgba(255,255,255,0.7); }
+.promo-badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; padding: 6px 18px; font-size: 0.8rem; font-weight: 700; color: var(--white); white-space: nowrap; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+.price-card { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; position: relative; transition: box-shadow 0.25s, transform 0.25s; }
+.price-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.09); transform: translateY(-3px); }
+.price-card.featured { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.price-card-header { padding: 1.8rem 2rem 1.4rem; background: var(--gray-50); border-bottom: 1px solid var(--border); position: relative; }
+.price-card.featured .price-card-header { background: var(--accent); border-bottom-color: transparent; }
+.featured-label { position: absolute; top: -1px; right: 1.5rem; background: #f59e0b; color: var(--black); font-size: 0.62rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 0 0 8px 8px; }
+.price-type { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gray-500); margin-bottom: 0.4rem; }
+.price-card.featured .price-type { color: rgba(255,255,255,0.6); }
+.price-name { font-size: 1.05rem; font-weight: 800; color: var(--black); letter-spacing: -0.03em; margin-bottom: 1rem; }
+.price-card.featured .price-name { color: var(--white); }
+.price-amount-row { display: flex; align-items: flex-end; gap: 8px; }
+.price-old { font-size: 1rem; color: var(--gray-300); text-decoration: line-through; font-weight: 500; padding-bottom: 2px; }
+.price-card.featured .price-old { color: rgba(255,255,255,0.4); }
+.price-amount { font-size: 2.2rem; font-weight: 800; color: var(--black); letter-spacing: -0.05em; line-height: 1; }
+.price-card.featured .price-amount { color: var(--white); }
+.price-unit { font-size: 0.78rem; color: var(--gray-500); padding-bottom: 4px; }
+.price-card.featured .price-unit { color: rgba(255,255,255,0.6); }
+.price-saving { display: inline-flex; align-items: center; gap: 5px; margin-top: 0.6rem; font-size: 0.72rem; font-weight: 700; color: var(--accent); background: var(--accent-pale); padding: 3px 10px; border-radius: 20px; }
+.price-card.featured .price-saving { color: #111; background: rgba(255,255,255,0.9); }
+.price-card-body { padding: 1.6rem 2rem; background: var(--white); }
+.price-includes { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-300); margin-bottom: 0.9rem; }
+.price-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+.price-features li { display: flex; gap: 8px; font-size: 0.82rem; color: var(--gray-700); line-height: 1.45; }
+.price-features li::before { content: '✓'; font-size: 0.7rem; font-weight: 700; color: var(--accent); flex-shrink: 0; margin-top: 2px; }
+.price-features li.extra { color: var(--gray-500); font-style: italic; }
+.price-features li.extra::before { content: '+'; color: var(--gray-300); }
+.price-cta { display: flex; align-items: center; justify-content: center; gap: 6px; width: 100%; padding: 11px; border-radius: var(--radius); font-size: 0.85rem; font-weight: 700; text-decoration: none; text-align: center; transition: all 0.2s; border: 1.5px solid var(--border); color: var(--black); background: var(--white); }
+.price-cta:hover { background: var(--gray-50); border-color: var(--gray-300); }
+.price-card.featured .price-cta { background: var(--white); color: var(--accent); border-color: transparent; }
+.price-card.featured .price-cta:hover { background: var(--accent-pale); }
+.price-addons { background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; }
+.price-addons-title { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-300); margin-bottom: 1.2rem; }
+.addons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.addon-item { background: var(--white); padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.addon-name { font-size: 0.82rem; font-weight: 700; color: var(--black); }
+.addon-desc { font-size: 0.73rem; color: var(--gray-500); line-height: 1.5; }
+.addon-price { font-size: 0.88rem; font-weight: 800; color: var(--accent); margin-top: 0.3rem; }
+.price-note { margin-top: 1.5rem; font-size: 0.75rem; color: var(--gray-500); line-height: 1.65; display: flex; gap: 10px; }
+.price-note::before { content: 'ℹ'; font-size: 0.9rem; color: var(--gray-300); flex-shrink: 0; }
+@media (max-width: 900px) { .pricing-grid { grid-template-columns: 1fr; } .addons-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .addons-grid { grid-template-columns: 1fr; } .promo-banner { flex-direction: column; align-items: flex-start; } }
+
+/* ── FAQ ── */
+.faq-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.faq-list { max-width: 760px; display: flex; flex-direction: column; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q { padding: 1.5rem 0; font-size: 0.95rem; font-weight: 600; color: var(--black); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; letter-spacing: -0.015em; user-select: none; }
+.faq-q::after { content: '+'; font-size: 1.2rem; color: var(--gray-300); font-weight: 300; flex-shrink: 0; transition: transform 0.2s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { display: none; padding-bottom: 1.5rem; font-size: 0.85rem; color: var(--gray-500); line-height: 1.75; }
+.faq-item.open .faq-a { display: block; }
+
+/* ── GALLERY ── */
+.gallery-section { background: var(--gray-50); border-bottom: 1px solid var(--border); }
+.gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 8px; border-radius: var(--radius-lg); overflow: hidden; }
+.gallery-item { overflow: hidden; position: relative; cursor: pointer; background: var(--gray-100); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.45s ease; }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item .g-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.48) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.2rem; }
+.gallery-item:hover .g-overlay { opacity: 1; }
+.g-caption { font-size: 0.75rem; color: rgba(255,255,255,0.92); font-weight: 500; letter-spacing: 0.02em; }
+.g1 { grid-column: span 4; grid-row: span 2; height: 440px; }
+.g2 { grid-column: span 4; height: 215px; }
+.g3 { grid-column: span 4; height: 215px; }
+.g4 { grid-column: span 4; height: 215px; }
+.g5 { grid-column: span 4; height: 215px; }
+.g6 { grid-column: span 8; height: 210px; }
+@media (max-width: 900px) { .gallery-grid { grid-template-columns: repeat(2,1fr); gap: 6px; } .g1,.g2,.g3,.g4,.g5,.g6 { grid-column: span 1; grid-row: span 1; height: 200px; } }
+@media (max-width: 540px) { .gallery-grid { grid-template-columns: 1fr; } .g1,.g2,.g3,.g4,.g5,.g6 { height: 220px; } }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 999; display: none; align-items: center; justify-content: center; padding: 2rem; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: var(--radius-lg); box-shadow: 0 32px 80px rgba(0,0,0,0.6); }
+.lb-close { position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(255,255,255,0.1); border: none; color: var(--white); font-size: 1.5rem; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.lb-close:hover { background: rgba(255,255,255,0.2); }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: var(--white); font-size: 1.5rem; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.lb-nav:hover { background: rgba(255,255,255,0.2); }
+.lb-prev { left: 1.5rem; } .lb-next { right: 1.5rem; }
+.lb-caption { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); font-size: 0.8rem; color: rgba(255,255,255,0.6); white-space: nowrap; }
+
+/* ── RELATED ── */
+.related-section { background: var(--white); border-bottom: 1px solid var(--border); }
+.related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.rel-card { background: var(--white); padding: 2rem; text-decoration: none; display: flex; flex-direction: column; gap: 0.8rem; transition: background 0.2s; }
+.rel-card:hover { background: var(--gray-50); }
+.rel-icon { font-size: 1.6rem; }
+.rel-name { font-size: 0.9rem; font-weight: 700; color: var(--black); letter-spacing: -0.02em; }
+.rel-desc { font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; flex: 1; }
+.rel-link { font-size: 0.75rem; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 4px; transition: gap 0.2s; }
+.rel-card:hover .rel-link { gap: 8px; }
+@media (max-width: 900px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .related-grid { grid-template-columns: 1fr; } }
+
+/* ── CTA ── */
+.cta-section { background: var(--black); padding: 5rem 2rem; }
+.cta-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.cta-left h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+.cta-left p { font-size: 0.88rem; color: rgba(255,255,255,0.45); line-height: 1.75; }
+.cta-right { display: flex; flex-direction: column; gap: 0.75rem; }
+.cta-btn { display: flex; align-items: center; gap: 14px; padding: 1.2rem 1.6rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-lg); text-decoration: none; transition: all 0.2s; }
+.cta-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); }
+.cta-btn-icon { width: 40px; height: 40px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.cta-btn-text span { display: block; font-size: 0.68rem; color: rgba(255,255,255,0.35); margin-bottom: 2px; }
+.cta-btn-text strong { display: block; font-size: 0.95rem; font-weight: 700; color: var(--white); }
+.cta-btn-arrow { margin-left: auto; color: rgba(255,255,255,0.3); }
+.cta-note { font-size: 0.72rem; color: rgba(255,255,255,0.25); line-height: 1.6; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.06); }
+@media (max-width: 900px) { .cta-inner { grid-template-columns: 1fr; gap: 2.5rem; } }
+
+/* ── FOOTER ── */
+footer { background: var(--gray-900); padding: 4rem 2rem 2rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.footer-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.35); line-height: 1.75; margin-top: 0.8rem; max-width: 260px; }
+.footer-logo { font-size: 1.15rem; font-weight: 800; color: var(--white); letter-spacing: -0.03em; display: flex; align-items: center; gap: 8px; }
+.footer-logo .lm { width: 28px; height: 28px; background: var(--accent); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 800; color: white; }
+.footer-col-title { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.3); margin-bottom: 1rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+.footer-bottom { max-width: 1200px; margin: 2rem auto 0; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); flex-wrap: wrap; gap: 1rem; }
+.footer-bottom a { color: rgba(255,255,255,0.2); text-decoration: none; }
+.footer-bottom a:hover { color: rgba(255,255,255,0.4); }
+@media (max-width: 900px) { .footer-inner { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .footer-inner { grid-template-columns: 1fr; } }
+
+/* ── FADE-IN ── */
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">
+            <div class="logo-mark">L</div>
+            Lagarto
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="/uslugi-porzadkowe/">Usługi</a></li>
+            <li><a href="/uslugi-ogrodnicze/">Ogród</a></li>
+            <li><a href="/uslugi-ddd/">DDD</a></li>
+            <li><a href="#kontakt" class="nav-cta">Bezpłatna wycena</a></li>
+        </ul>
+        <button class="nav-mobile-toggle">☰</button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg-photo"></div>
+    <div class="hero-inner">
+        <nav class="breadcrumb">
+            <a href="/">Lagarto</a>
+            <span>›</span>
+            <a href="/uslugi/">Usługi</a>
+            <span>›</span>
+            <span>Inspekcja dronowa</span>
+        </nav>
+        <div class="hero-eyebrow">Nowoczesna diagnostyka budynków</div>
+        <h1>Inspekcja dronowa<br><em>rynien, dachów</em><br>i elewacji</h1>
+        <p class="hero-desc">Precyzyjna kontrola stanu technicznego budynku bez rusztowań i podnośników. Kamera drona dociera tam, gdzie ludzkie oko nie sięga – i dostarcza szczegółowy raport zdjęciowy w dniu realizacji.</p>
+        <div class="hero-actions">
+            <a href="#kontakt" class="btn btn-dark">Zamów inspekcję →</a>
+            <a href="#zakres" class="btn btn-outline">Zakres kontroli</a>
+            <a href="#sprzet" class="btn btn-outline" style="font-size:0.8rem;padding:10px 20px;">Nasz sprzęt ↓</a>
+        </div>
+    </div>
+</section>
+
+<!-- SCOPE -->
+<section class="section scope-section" id="zakres">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Zakres inspekcji</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Co kontrolujemy<br>dronem?</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Dron pozwala dokładnie zbadać trzy kluczowe elementy budynku – bez demontażu, bez sprzętu wysokościowego i bez zakłócania codziennego funkcjonowania obiektu.</p>
+        </div>
+        <div class="scope-grid fade-in">
+
+            <!-- RYNNY -->
+            <div class="scope-card">
+                <div class="scope-card-img">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Inspekcja rynien dronem">
+                    <div class="scope-card-badge">Rynny</div>
+                </div>
+                <div class="scope-card-body">
+                    <div class="scope-card-icon">🌧️</div>
+                    <div class="scope-card-title">Rynny i rury spustowe</div>
+                    <div class="scope-card-desc">Zatkaone rynny to jeden z najczęstszych powodów zawilgocenia ścian i fundamentów. Kamera drona szczegółowo dokumentuje stan całego systemu odwodnienia dachu.</div>
+                    <ul class="scope-checks">
+                        <li>Zapchania liśćmi, mchem i ziemią</li>
+                        <li>Pęknięcia, odkształcenia i wycieki</li>
+                        <li>Odpadające lub obluzowane haki</li>
+                        <li>Stan połączeń i rur spustowych</li>
+                        <li>Osady i korozja wewnątrz rynny</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DACH -->
+            <div class="scope-card">
+                <div class="scope-card-img">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Inspekcja dachu dronem">
+                    <div class="scope-card-badge">Dach</div>
+                </div>
+                <div class="scope-card-body">
+                    <div class="scope-card-icon">🏠</div>
+                    <div class="scope-card-title">Pokrycie dachowe</div>
+                    <div class="scope-card-desc">Uszkodzone dachówki, blacha z ubytkami czy nieszczelne kominowanie – dron dokumentuje stan połaci dachowej z lotu ptaka z rozdzielczością pozwalającą na ocenę każdego detalu.</div>
+                    <ul class="scope-checks">
+                        <li>Brakujące lub pęknięte dachówki i blacha</li>
+                        <li>Mchy i porosty na połaci</li>
+                        <li>Stan obróbek blacharskich i kominów</li>
+                        <li>Uszkodzenia po wietrze i gradzie</li>
+                        <li>Nieszczelności i zmiany kolorystyczne</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ELEWACJA -->
+            <div class="scope-card">
+                <div class="scope-card-img">
+                    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Inspekcja elewacji dronem">
+                    <div class="scope-card-badge">Elewacja</div>
+                </div>
+                <div class="scope-card-body">
+                    <div class="scope-card-icon">🏗️</div>
+                    <div class="scope-card-title">Elewacja i ściany zewnętrzne</div>
+                    <div class="scope-card-desc">Pęknięcia, odparzenia tynku czy zacieki na wyższych kondygnacjach są często niezauważane latami. Dron skanuje całą elewację i precyzyjnie lokalizuje miejsca wymagające interwencji.</div>
+                    <ul class="scope-checks">
+                        <li>Pęknięcia i spękania tynku</li>
+                        <li>Odparzenia i odspojenia warstwy elewacyjnej</li>
+                        <li>Zacieki i ślady zawilgocenia</li>
+                        <li>Glony, mchy i naloty biologiczne</li>
+                        <li>Stan okładzin i dylatacji</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="section adv-section" id="zalety">
+    <div class="section-inner">
+        <div class="adv-layout">
+            <div>
+                <div class="section-tag fade-in">Dlaczego dron?</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Inspekcja bez rusztowania –<br>szybciej, taniej, bezpieczniej</h2>
+                <div class="adv-list fade-in fade-in-delay-2">
+                    <div class="adv-item">
+                        <div class="adv-num">01</div>
+                        <div class="adv-body">
+                            <h4>Oszczędność czasu i kosztów</h4>
+                            <p>Tradycyjna inspekcja z rusztowaniem to kilka dni montażu i setki złotych za wynajem. Dron pozwala zbadać cały budynek w ciągu kilku godzin – w tym samym czasie i bez dodatkowych kosztów sprzętowych.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="adv-num">02</div>
+                        <div class="adv-body">
+                            <h4>Dostęp do każdego miejsca</h4>
+                            <p>Kominy, attyki, trudno dostępne narożniki i obróbki – kamera drona dociera tam, gdzie montaż rusztowania byłby niemożliwy lub niepraktyczny. Żadne miejsce nie pozostaje niezbadane.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="adv-num">03</div>
+                        <div class="adv-body">
+                            <h4>Szczegółowy raport z dokumentacją</h4>
+                            <p>Każda inspekcja kończy się raportem PDF z opisem usterek, fotografiami w wysokiej rozdzielczości i wskazaniem priorytetów napraw. Dokument jest gotowy jeszcze tego samego dnia.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="adv-num">04</div>
+                        <div class="adv-body">
+                            <h4>Bezpieczeństwo i brak ingerencji</h4>
+                            <p>Inspekcja dronowa nie wymaga wchodzenia na dach ani instalowania rusztowań przy budynku. Cały proces odbywa się bezkontaktowo – bez ryzyka uszkodzenia pokrycia dachowego czy elewacji.</p>
+                        </div>
+                    </div>
+                    <div class="adv-item">
+                        <div class="adv-num">05</div>
+                        <div class="adv-body">
+                            <h4>Podstawa do decyzji remontowych</h4>
+                            <p>Raport z inspekcji dronowej to konkretna dokumentacja do rozmów z wykonawcami, ubezpieczycielem lub wspólnotą mieszkaniową. Wiesz dokładnie co, gdzie i jak pilnie wymaga naprawy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="adv-cta-box fade-in fade-in-delay-1">
+                    <div class="acb-tag">Bezpłatna wycena</div>
+                    <div class="acb-title">Sprawdź stan swojego budynku</div>
+                    <div class="acb-desc">Wyślij nam adres obiektu lub zadzwoń – doradzimy zakres inspekcji i przygotujemy wycenę. Realizujemy zlecenia w Szczecinie i okolicach.</div>
+                    <div class="acb-contact">
+                        <a href="tel:535483411" class="acb-row">
+                            <div class="acb-row-icon">📞</div>
+                            <div class="acb-row-text">
+                                <span>Zadzwoń</span>
+                                <strong>535 483 411</strong>
+                            </div>
+                            <div class="acb-row-arrow">→</div>
+                        </a>
+                        <a href="mailto:biuro@lagarto.szczecin.pl" class="acb-row">
+                            <div class="acb-row-icon">✉️</div>
+                            <div class="acb-row-text">
+                                <span>Napisz</span>
+                                <strong>biuro@lagarto.szczecin.pl</strong>
+                            </div>
+                            <div class="acb-row-arrow">→</div>
+                        </a>
+                    </div>
+                    <div class="acb-note">Odpowiadamy w ciągu 24 godzin. Wycena jest całkowicie bezpłatna i niezobowiązująca.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="section forwhom-section">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Dla kogo</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Kto korzysta<br>z inspekcji dronowej?</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Inspekcja dronowa sprawdza się wszędzie tam, gdzie potrzebna jest szybka i rzetelna ocena stanu technicznego zewnętrznych elementów budynku.</p>
+        </div>
+        <div class="fw-grid fade-in">
+            <div class="fw-card">
+                <div class="fw-icon">🏘️</div>
+                <div class="fw-title">Wspólnoty i spółdzielnie mieszkaniowe</div>
+                <div class="fw-desc">Coroczna kontrola stanu budynków wielorodzinnych – dokumentacja do planu remontowego i rozliczeń z funduszu remontowego.</div>
+            </div>
+            <div class="fw-card">
+                <div class="fw-icon">🏢</div>
+                <div class="fw-title">Zarządcy nieruchomości komercyjnych</div>
+                <div class="fw-desc">Inspekcja hal, magazynów, biurowców i obiektów przemysłowych bez przestojów w pracy zakładu.</div>
+            </div>
+            <div class="fw-card">
+                <div class="fw-icon">🏠</div>
+                <div class="fw-title">Właściciele domów jednorodzinnych</div>
+                <div class="fw-desc">Sezonowa kontrola dachu i rynien przed zimą lub po jej zakończeniu. Wczesne wykrycie usterek to oszczędność na kosztownych naprawach.</div>
+            </div>
+            <div class="fw-card">
+                <div class="fw-icon">🔨</div>
+                <div class="fw-title">Firmy remontowe i deweloperzy</div>
+                <div class="fw-desc">Dokumentacja stanu przed i po remoncie, ocena zakresu prac i weryfikacja jakości wykonanych robót na trudno dostępnych powierzchniach.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process-section" id="jak-dzialamy">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Jak to działa</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Przebieg inspekcji<br>krok po kroku</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Od pierwszego kontaktu do gotowego raportu – cały proces trwa zazwyczaj jeden dzień roboczy.</p>
+        </div>
+        <div class="process-steps fade-in">
+            <div class="ps-step">
+                <div class="ps-num">KROK 01</div>
+                <div class="ps-icon">📋</div>
+                <div class="ps-title">Bezpłatna wycena</div>
+                <div class="ps-desc">Skontaktuj się z nami telefonicznie lub mailowo. Podaj adres obiektu i opisz zakres – przygotujemy wycenę bez wychodzenia z domu.</div>
+            </div>
+            <div class="ps-step">
+                <div class="ps-num">KROK 02</div>
+                <div class="ps-icon">📅</div>
+                <div class="ps-title">Ustalenie terminu</div>
+                <div class="ps-desc">Dobieramy termin z uwzględnieniem warunków pogodowych. Inspekcja wymaga dobrej widoczności i braku silnego wiatru (powyżej 8 m/s).</div>
+            </div>
+            <div class="ps-step">
+                <div class="ps-num">KROK 03</div>
+                <div class="ps-icon">🚁</div>
+                <div class="ps-title">Lot inspekcyjny</div>
+                <div class="ps-desc">Pilot realizuje systematyczny przelot wokół budynku. Kamera 4K nagrywa wideo i wykonuje zdjęcia każdej badanej strefy w najwyższej rozdzielczości.</div>
+            </div>
+            <div class="ps-step">
+                <div class="ps-num">KROK 04</div>
+                <div class="ps-icon">🔍</div>
+                <div class="ps-title">Analiza i opracowanie</div>
+                <div class="ps-desc">Specjalista analizuje materiał, identyfikuje usterki i klasyfikuje je według pilności: do obserwacji, wymagające naprawy, pilne.</div>
+            </div>
+            <div class="ps-step">
+                <div class="ps-num">KROK 05</div>
+                <div class="ps-icon">📄</div>
+                <div class="ps-title">Raport PDF</div>
+                <div class="ps-desc">Otrzymujesz szczegółowy raport z opisem wszystkich usterek, dokumentacją fotograficzną i zaleceniami dotyczącymi kolejnych kroków.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REPORT SECTION -->
+<section class="section report-section" id="raport">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Raport z inspekcji</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Co zawiera<br>raport dronowy?</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Dostarczamy przejrzysty dokument PDF, który możesz przekazać wykonawcom, zarządcy budynku lub ubezpieczycielowi.</p>
+        </div>
+        <div class="report-layout fade-in">
+            <div>
+                <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-300);margin-bottom:1.2rem;">Przykład raportu</p>
+                <div class="report-preview">
+                    <div class="report-preview-header">
+                        <div class="dot green"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="report-preview-title">Raport inspekcji dronowej – Lagarto.pdf</div>
+                    </div>
+                    <div class="report-body">
+                        <div class="report-row">
+                            <div class="report-row-icon">🌧️</div>
+                            <div class="report-row-body">
+                                <strong>Rynna północna – odcinek 8 m</strong>
+                                <span>Zator z liści i mchu, brak odpływu do rury spustowej</span>
+                            </div>
+                            <div class="report-row-status status-bad">Pilne</div>
+                        </div>
+                        <div class="report-row">
+                            <div class="report-row-icon">🏠</div>
+                            <div class="report-row-body">
+                                <strong>Dachówki – połać wschodnia</strong>
+                                <span>3 dachówki z pęknięciami, potencjalne nieszczelności przy opadach</span>
+                            </div>
+                            <div class="report-row-status status-warn">Naprawić</div>
+                        </div>
+                        <div class="report-row">
+                            <div class="report-row-icon">🏗️</div>
+                            <div class="report-row-body">
+                                <strong>Elewacja zachodnia – 2. piętro</strong>
+                                <span>Nalot glonów i mchu – wskazane mycie chemiczne</span>
+                            </div>
+                            <div class="report-row-status status-warn">Naprawić</div>
+                        </div>
+                        <div class="report-row">
+                            <div class="report-row-icon">🔲</div>
+                            <div class="report-row-body">
+                                <strong>Obróbka blacharska komina</strong>
+                                <span>Stan dobry, brak śladów korozji ani odkształceń</span>
+                            </div>
+                            <div class="report-row-status status-ok">OK</div>
+                        </div>
+                        <div class="report-row">
+                            <div class="report-row-icon">💧</div>
+                            <div class="report-row-body">
+                                <strong>Rura spustowa południowa</strong>
+                                <span>Stan dobry, brak uszkodzeń mechanicznych ani nieszczelności</span>
+                            </div>
+                            <div class="report-row-status status-ok">OK</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-300);margin-bottom:1.2rem;">Zawartość raportu</p>
+                <div class="report-features">
+                    <div class="rf-item">
+                        <div class="rf-icon">📸</div>
+                        <div class="rf-body">
+                            <strong>Dokumentacja fotograficzna 48 MP</strong>
+                            <span>Zdjęcia wszystkich badanych stref z matrycy 1/1,3" CMOS – wyraźne detale nawet przy zachmurzeniu, z oznaczeniem lokalizacji usterek na rzucie budynku.</span>
+                        </div>
+                    </div>
+                    <div class="rf-item">
+                        <div class="rf-icon">🗺️</div>
+                        <div class="rf-body">
+                            <strong>Mapa usterek</strong>
+                            <span>Każda usterka oznaczona na planie elewacji – wiadomo dokładnie gdzie i na jakiej wysokości.</span>
+                        </div>
+                    </div>
+                    <div class="rf-item">
+                        <div class="rf-icon">⚡</div>
+                        <div class="rf-body">
+                            <strong>Klasyfikacja pilności</strong>
+                            <span>Trzy poziomy: OK / Do naprawy / Pilne – ułatwia planowanie i priorytetyzację prac.</span>
+                        </div>
+                    </div>
+                    <div class="rf-item">
+                        <div class="rf-icon">🛠️</div>
+                        <div class="rf-body">
+                            <strong>Zalecenia i wnioski</strong>
+                            <span>Konkretne wskazówki dotyczące kolejnych kroków: czyszczenie, naprawa, uszczelnienie lub wymiana.</span>
+                        </div>
+                    </div>
+                    <div class="rf-item">
+                        <div class="rf-icon">📁</div>
+                        <div class="rf-body">
+                            <strong>Plik PDF + surowe zdjęcia</strong>
+                            <span>Gotowy raport PDF oraz archiwum zdjęć w pełnej rozdzielczości do Twoich celów dokumentacyjnych.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DRONE SPECS -->
+<section class="specs-section" id="sprzet">
+    <div class="specs-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Nasz sprzęt</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Latamy na<br>DJI Mini 4 Pro</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Wybór sprzętu to nie przypadek. DJI Mini 4 Pro to aktualnie jeden z najlepszych dronów inspekcyjnych w swojej klasie wagowej – z kamerą o jakości profesjonalnej i zaawansowaną elektroniką bezpieczeństwa.</p>
+        </div>
+        <div class="specs-layout fade-in">
+            <div>
+                <div class="specs-model-card">
+                    <div class="specs-model-header">
+                        <div class="specs-model-icon">🚁</div>
+                        <div>
+                            <div class="specs-model-name">Sprzęt inspekcyjny · Fly More Combo (RC 2)</div>
+                            <div class="specs-model-title">DJI Mini 4 Pro</div>
+                        </div>
+                    </div>
+                    <div class="specs-table">
+                        <div class="specs-row">
+                            <div class="specs-key">Matryca kamery</div>
+                            <div class="specs-val"><span class="highlight">1/1,3" CMOS</span> · 48 MP</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Wideo</div>
+                            <div class="specs-val"><span class="highlight">4K/60fps HDR</span> · 4K/100fps</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Przysłona</div>
+                            <div class="specs-val">f/1.7 (stała)</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Tryb kolorów</div>
+                            <div class="specs-val">D-Log M · HLG · 10-bit</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Czas lotu</div>
+                            <div class="specs-val"><span class="highlight">34 min</span> (Intelligent Flight Battery Plus)</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Zasięg transmisji</div>
+                            <div class="specs-val"><span class="highlight">10 km</span> (DJI O4)</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Waga drona</div>
+                            <div class="specs-val">249 g – klasa C0, bez rejestracji</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Unikanie przeszkód</div>
+                            <div class="specs-val">APAS 360° · czujniki 4-kierunkowe</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Gimbal</div>
+                            <div class="specs-val">3-osiowy · ±135° obrót pionowy</div>
+                        </div>
+                        <div class="specs-row">
+                            <div class="specs-key">Maksymalna prędkość wiatru</div>
+                            <div class="specs-val">10,7 m/s (Beaufort 5)</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="specs-note">Dron DJI Mini 4 Pro waży poniżej 250 g i należy do kategorii C0, co oznacza możliwość wykonywania lotów bez dodatkowych uprawnień w większości stref. Nasze inspekcje wykonujemy zgodnie z przepisami rozporządzenia UE 2019/945 i lokalnych regulacji lotnictwa cywilnego.</div>
+            </div>
+            <div>
+                <div class="specs-features">
+                    <div class="sf-item">
+                        <div class="sf-icon">🎥</div>
+                        <div class="sf-body">
+                            <strong>Kamera 48 MP z matrycą 1/1,3" CMOS</strong>
+                            <span>Duża matryca oznacza więcej światła na piksel – zdjęcia usterek są wyraźne nawet w cieniu połaci dachowej, przy zachmurzeniu czy w godzinach rannych. Przysłona f/1.7 to jedna z najjaśniejszych w klasie dronów do 250 g.</span>
+                        </div>
+                    </div>
+                    <div class="sf-item">
+                        <div class="sf-icon">🎞️</div>
+                        <div class="sf-body">
+                            <strong>Wideo 4K/60fps HDR i tryb D-Log M</strong>
+                            <span>Nagrania inspekcyjne w pełnej rozdzielczości 4K z szerokim zakresem tonalnym HDR. Tryb D-Log M (10-bit) pozwala wyciągnąć szczegóły zarówno w prześwietlonych partiach dachu, jak i w głębokich cieniach rynien.</span>
+                        </div>
+                    </div>
+                    <div class="sf-item">
+                        <div class="sf-icon">🛡️</div>
+                        <div class="sf-body">
+                            <strong>Omnidirectional APAS – unikanie przeszkód 360°</strong>
+                            <span>Czujniki binokularne na wszystkich czterech stronach oraz sensor podczerwieni pod spodem. System APAS automatycznie omija przeszkody podczas lotu wokół budynku – komin, anteny, linie elektryczne.</span>
+                        </div>
+                    </div>
+                    <div class="sf-item">
+                        <div class="sf-icon">⏱️</div>
+                        <div class="sf-body">
+                            <strong>34 minuty lotu w zestawie Fly More Combo</strong>
+                            <span>Pakiet Fly More Combo oznacza dodatkowe baterie na miejscu – możemy wykonać inspekcję większego obiektu lub powtórzyć ujęcia bez przerwy na ładowanie. Jedno naładowanie w zupełności wystarczy na dom jednorodzinny.</span>
+                        </div>
+                    </div>
+                    <div class="sf-item">
+                        <div class="sf-icon">📡</div>
+                        <div class="sf-body">
+                            <strong>Transmisja DJI O4 do 10 km · podgląd 1080p live</strong>
+                            <span>Operator widzi na kontrolerze RC 2 obraz na żywo w jakości Full HD – może w czasie rzeczywistym oceniać stan dachu i decydować o dodatkowych zbliżeniach, bez konieczności lądowania i przeglądania nagrania.</span>
+                        </div>
+                    </div>
+                    <div class="sf-item">
+                        <div class="sf-icon">📐</div>
+                        <div class="sf-body">
+                            <strong>Gimbal 3-osiowy z obrotem True Vertical</strong>
+                            <span>Kamera montowana na 3-osiowym gimbalu zapewnia idealnie stabilny obraz nawet przy podmuchach wiatru. Obrót o 135° pozwala fotografować rynnę „od dołu" bez zmiany pozycji drona.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="cennik">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Cennik</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Przejrzyste ceny,<br>bez ukrytych opłat</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Ceny dopasowane do wielkości obiektu. Każdy pakiet zawiera lot inspekcyjny, analizę i raport PDF tego samego dnia.</p>
+        </div>
+
+        <!-- PROMO BANNER -->
+        <div class="promo-banner fade-in">
+            <div class="promo-banner-left">
+                <div class="promo-fire">🔥</div>
+                <div class="promo-text">
+                    <strong>Promocja wiosenna – do 31 maja 2025</strong>
+                    <span>Zamów inspekcję dachu i rynien razem z czyszczeniem elewacji – otrzymasz 15% rabatu na oba zlecenia.</span>
+                </div>
+            </div>
+            <div class="promo-badge">Tylko do 31 maja</div>
+        </div>
+
+        <!-- PRICING CARDS -->
+        <div class="pricing-grid fade-in">
+
+            <!-- DOM JEDNORODZINNY -->
+            <div class="price-card">
+                <div class="price-card-header">
+                    <div class="price-type">Dom jednorodzinny</div>
+                    <div class="price-name">Inspekcja Standard</div>
+                    <div class="price-amount-row">
+                        <div class="price-old">499 zł</div>
+                        <div class="price-amount">349</div>
+                        <div class="price-unit">zł brutto</div>
+                    </div>
+                    <div class="price-saving">✦ Oszczędzasz 150 zł</div>
+                </div>
+                <div class="price-card-body">
+                    <div class="price-includes">W pakiecie</div>
+                    <ul class="price-features">
+                        <li>Lot inspekcyjny do 200 m² rzutu</li>
+                        <li>Kontrola dachu, rynien i elewacji</li>
+                        <li>Zdjęcia 4K ze wszystkich stref</li>
+                        <li>Raport PDF z mapą usterek</li>
+                        <li>Klasyfikacja pilności napraw</li>
+                        <li class="extra">Nagranie wideo z lotu (+149 zł)</li>
+                    </ul>
+                    <a href="#kontakt" class="price-cta">Zamów inspekcję →</a>
+                </div>
+            </div>
+
+            <!-- KAMIENICA / BLOK -->
+            <div class="price-card featured">
+                <div class="featured-label">⭐ Najpopularniejszy</div>
+                <div class="price-card-header">
+                    <div class="price-type">Kamienica / blok 3–5 pięter</div>
+                    <div class="price-name">Inspekcja Pro</div>
+                    <div class="price-amount-row">
+                        <div class="price-old">899 zł</div>
+                        <div class="price-amount">699</div>
+                        <div class="price-unit">zł brutto</div>
+                    </div>
+                    <div class="price-saving">✦ Oszczędzasz 200 zł</div>
+                </div>
+                <div class="price-card-body">
+                    <div class="price-includes">W pakiecie</div>
+                    <ul class="price-features">
+                        <li>Lot inspekcyjny do 600 m² rzutu</li>
+                        <li>Kontrola dachu, rynien i 4 elewacji</li>
+                        <li>Zdjęcia 48 MP + wideo 4K/60fps HDR</li>
+                        <li>Raport PDF z mapą usterek</li>
+                        <li>Klasyfikacja pilności napraw</li>
+                        <li>Nagranie wideo z lotu w cenie</li>
+                        <li>Konsultacja telefoniczna po raporcie</li>
+                    </ul>
+                    <a href="#kontakt" class="price-cta">Zamów inspekcję →</a>
+                </div>
+            </div>
+
+            <!-- OBIEKT KOMERCYJNY -->
+            <div class="price-card">
+                <div class="price-card-header">
+                    <div class="price-type">Obiekt komercyjny / hala</div>
+                    <div class="price-name">Inspekcja Business</div>
+                    <div class="price-amount-row">
+                        <div class="price-amount">Wycena</div>
+                        <div class="price-unit" style="padding-bottom:4px;">indywidualna</div>
+                    </div>
+                    <div class="price-saving">✦ Rabat dla stałych klientów</div>
+                </div>
+                <div class="price-card-body">
+                    <div class="price-includes">W pakiecie</div>
+                    <ul class="price-features">
+                        <li>Nieograniczona powierzchnia rzutu</li>
+                        <li>Inspekcja dachu płaskiego i skośnego</li>
+                        <li>Termowizja opcjonalnie (+wycena)</li>
+                        <li>Rozbudowany raport techniczny PDF</li>
+                        <li>Priorytetowy termin realizacji</li>
+                        <li>Nagranie wideo 4K w cenie</li>
+                        <li>Cykliczne inspekcje w abonamencie</li>
+                    </ul>
+                    <a href="#kontakt" class="price-cta">Zapytaj o wycenę →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ADD-ONS -->
+        <div class="price-addons fade-in">
+            <div class="price-addons-title">Dodatki i opcje rozszerzone</div>
+            <div class="addons-grid">
+                <div class="addon-item">
+                    <div class="addon-name">📹 Nagranie wideo 4K</div>
+                    <div class="addon-desc">Pełne nagranie z lotu inspekcyjnego w rozdzielczości 4K do archiwum lub prezentacji.</div>
+                    <div class="addon-price">+149 zł</div>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-name">🌡️ Kamera termowizyjna</div>
+                    <div class="addon-desc">Wykrywanie mostków termicznych, zawilgoceń i nieszczelności niewidocznych w świetle dziennym.</div>
+                    <div class="addon-price">od +299 zł</div>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-name">📐 Pomiary metryczne</div>
+                    <div class="addon-desc">Szacunkowe wymiary uszkodzeń i powierzchni do naprawy – przydatne przy kosztorysowaniu robót.</div>
+                    <div class="addon-price">+99 zł</div>
+                </div>
+                <div class="addon-item">
+                    <div class="addon-name">🔄 Inspekcja cykliczna</div>
+                    <div class="addon-desc">Abonament 2x lub 4x w roku – stały monitoring stanu budynku z 20% rabatem na każdą wizytę.</div>
+                    <div class="addon-price">–20% rabatu</div>
+                </div>
+            </div>
+            <p class="price-note">Ceny zawierają VAT 23%. Podane ceny są cenami orientacyjnymi – ostateczna wycena zależy od lokalizacji, dostępności strefy lotu i zakresu inspekcji. Dojazd do 30 km od centrum Szczecina w cenie. Powyżej 30 km – dopłata 1,50 zł/km.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">FAQ</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Najczęstsze pytania</h2>
+            </div>
+        </div>
+        <div class="faq-list fade-in">
+            <div class="faq-item">
+                <div class="faq-q">Ile kosztuje inspekcja dronowa budynku?</div>
+                <div class="faq-a">Mamy trzy stałe pakiety: Inspekcja Standard (dom jednorodzinny do 200 m²) – 349 zł brutto, Inspekcja Pro (kamienica / blok 3–5 pięter) – 699 zł brutto, oraz Inspekcja Business (obiekty komercyjne, hale) – wycena indywidualna. Dojazd do 30 km od centrum Szczecina jest w cenie. Szczegółowy cennik z rozszerzeniami znajdziesz w sekcji Cennik powyżej.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy potrzebne jest specjalne zezwolenie na lot dronem?</div>
+                <div class="faq-a">Nasze loty inspekcyjne realizowane są zgodnie z przepisami UAS kategorii „open" lub „specific" w zależności od lokalizacji i warunków. Nasi piloci posiadają wymagane uprawnienia UAVO. W przypadku stref kontrolowanych (np. w pobliżu lotnisk) uzyskujemy niezbędne zgody przed realizacją zlecenia – klient nie musi zajmować się formalnościami.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Kiedy inspekcja nie jest możliwa?</div>
+                <div class="faq-a">Głównym ograniczeniem są warunki atmosferyczne: silny wiatr (powyżej ok. 10 m/s – DJI Mini 4 Pro wytrzymuje do 10,7 m/s czyli siłę wiatru Beaufort 5), deszcz, gęsta mgła lub oblodzenie uniemożliwiają bezpieczny lot. Zawsze monitorujemy prognozę pogody i ustalamy z klientem termin zastępczy w razie niepogody, bez dodatkowych kosztów.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Jak szybko mogę otrzymać raport?</div>
+                <div class="faq-a">Raport przygotowujemy jeszcze tego samego dnia co inspekcja lub – przy rozbudowanych obiektach – następnego dnia roboczego. Wysyłamy go mailem w formacie PDF wraz z archiwum zdjęć. Na życzenie możemy też dostarczyć nagranie wideo z całego lotu.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy inspekcja dronowa zastępuje tradycyjny przegląd budowlany?</div>
+                <div class="faq-a">Inspekcja dronowa jest uzupełnieniem, a nie formalnym zastępstwem przeglądu budowlanego w rozumieniu Prawa Budowlanego. Dostarcza jednak szczegółowej dokumentacji wizualnej, która jest cennym materiałem dla uprawnionego inspektora lub inżyniera budowlanego i może znacznie skrócić czas tradycyjnej kontroli.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Czy możecie od razu wycenić naprawy wykrytych usterek?</div>
+                <div class="faq-a">Tak – po inspekcji możemy przygotować wycenę usług, które realizujemy w Lagarto: mycie rynien i dachu, czyszczenie elewacji, usuwanie glonów i mchów. Jeśli usterki wymagają specjalistycznych robót budowlanych, wskażemy Ci odpowiednich partnerów.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section gallery-section" id="realizacje">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Realizacje</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Przykłady inspekcji<br>dronowych</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Kliknij zdjęcie, aby zobaczyć je w powiększeniu.</p>
+        </div>
+        <div class="gallery-grid fade-in">
+            <div class="gallery-item g1" onclick="openLightbox(0)">
+                <img src="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&q=80" alt="Dron nad budynkiem">
+                <div class="g-overlay"><div class="g-caption">Inspekcja dachu – widok z lotu ptaka</div></div>
+            </div>
+            <div class="gallery-item g2" onclick="openLightbox(1)">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Dach z bliska">
+                <div class="g-overlay"><div class="g-caption">Pokrycie dachowe – pęknięta dachówka</div></div>
+            </div>
+            <div class="gallery-item g3" onclick="openLightbox(2)">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Rynna z liśćmi">
+                <div class="g-overlay"><div class="g-caption">Zator w rynnie – kamera 4K</div></div>
+            </div>
+            <div class="gallery-item g4" onclick="openLightbox(3)">
+                <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Elewacja budynku">
+                <div class="g-overlay"><div class="g-caption">Elewacja – nalot biologiczny 3. piętro</div></div>
+            </div>
+            <div class="gallery-item g5" onclick="openLightbox(4)">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80" alt="Budynek po inspekcji">
+                <div class="g-overlay"><div class="g-caption">Obróbka blacharska komina – zbliżenie</div></div>
+            </div>
+            <div class="gallery-item g6" onclick="openLightbox(5)">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=80" alt="Dom jednorodzinny">
+                <div class="g-overlay"><div class="g-caption">Dom jednorodzinny – inspekcja przedremontowa</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+    <div class="lb-caption" id="lb-caption"></div>
+</div>
+
+<!-- RELATED -->
+<section class="section related-section">
+    <div class="section-inner">
+        <div class="section-head">
+            <div>
+                <div class="section-tag fade-in">Powiązane usługi</div>
+                <h2 class="section-title fade-in fade-in-delay-1">Co robimy po inspekcji?</h2>
+            </div>
+            <p class="section-desc fade-in fade-in-delay-2">Inspekcja dronowa to często pierwszy krok. Możemy od razu przejść do realizacji wykrytych prac.</p>
+        </div>
+        <div class="related-grid fade-in">
+            <a href="/czyszczenie-elewacji/" class="rel-card">
+                <div class="rel-icon">🏗️</div>
+                <div class="rel-name">Mycie elewacji</div>
+                <div class="rel-desc">Profesjonalne czyszczenie tynków, klinkieru i betonu – usuwanie glonów, mchu i zabrudzeń atmosferycznych.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+            <a href="/mycie-okien/" class="rel-card">
+                <div class="rel-icon">🪟</div>
+                <div class="rel-name">Mycie okien</div>
+                <div class="rel-desc">Profesjonalne mycie szyb, ram i parapetów na każdej wysokości – metoda czystej wody i wycieraczki teleskopowe.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+            <a href="/utrzymanie-obiektow/" class="rel-card">
+                <div class="rel-icon">🏢</div>
+                <div class="rel-name">Utrzymanie obiektów</div>
+                <div class="rel-desc">Kompleksowa obsługa techniczna i porządkowa nieruchomości komercyjnych i wspólnot mieszkaniowych.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+            <a href="/uslugi-ogrodnicze/" class="rel-card">
+                <div class="rel-icon">🌿</div>
+                <div class="rel-name">Usługi ogrodnicze</div>
+                <div class="rel-desc">Pielęgnacja terenów zielonych wokół budynków – koszenie, przycinanie, porządkowanie i nasadzenia.</div>
+                <div class="rel-link">Dowiedz się więcej →</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="kontakt">
+    <div class="cta-inner">
+        <div class="cta-left">
+            <h2>Zamów inspekcję<br>dronową budynku</h2>
+            <p>Powiedz nam adres obiektu i zakres – przygotujemy bezpłatną wycenę w ciągu 24 godzin. Realizujemy inspekcje w Szczecinie i w promieniu 50 km.</p>
+        </div>
+        <div class="cta-right">
+            <a href="tel:535483411" class="cta-btn">
+                <div class="cta-btn-icon">📞</div>
+                <div class="cta-btn-text">
+                    <span>Zadzwoń do nas</span>
+                    <strong>535 483 411</strong>
+                </div>
+                <div class="cta-btn-arrow">→</div>
+            </a>
+            <a href="mailto:biuro@lagarto.szczecin.pl" class="cta-btn">
+                <div class="cta-btn-icon">✉️</div>
+                <div class="cta-btn-text">
+                    <span>Napisz maila</span>
+                    <strong>biuro@lagarto.szczecin.pl</strong>
+                </div>
+                <div class="cta-btn-arrow">→</div>
+            </a>
+            <div class="cta-note">Wycena jest bezpłatna i niezobowiązująca. Odpiszemy lub oddzwonimy w ciągu jednego dnia roboczego. Pon–Pt 8:00–16:00.</div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo"><div class="lm">L</div> Lagarto</div>
+            <p>Profesjonalne usługi porządkowe i techniczne dla nieruchomości w Szczecinie i okolicach.</p>
+        </div>
+        <div>
+            <p class="footer-col-title">Usługi</p>
+            <ul class="footer-links">
+                <li><a href="/uslugi-porzadkowe/">Usługi porządkowe</a></li>
+                <li><a href="/wywoz-gabarytow/">Wywóz gabarytów</a></li>
+                <li><a href="/uslugi-ogrodnicze/">Usługi ogrodnicze</a></li>
+                <li><a href="/maszynowe-doczyszczanie/">Maszynowe doczyszczanie</a></li>
+                <li><a href="/czyszczenie-elewacji/">Mycie elewacji</a></li>
+                <li><a href="/uslugi-ddd/">Usługi DDD</a></li>
+                <li><a href="#">Inspekcja dronowa</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Firma</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Strona główna</a></li>
+                <li><a href="index.html#dla-kogo">Dla kogo</a></li>
+                <li><a href="index.html#jak-dzialamy">Jak działamy</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="footer-col-title">Kontakt</p>
+            <ul class="footer-links">
+                <li><a href="tel:535483411">535 483 411</a></li>
+                <li><a href="mailto:biuro@lagarto.szczecin.pl">biuro@lagarto.szczecin.pl</a></li>
+                <li><a href="#">Szczecin i okolice</a></li>
+                <li><a href="#">Pon–Pt 8:00–16:00</a></li>
+            </ul>
+            <div style="margin-top:1.2rem;">
+                <p class="footer-col-title">Prawne</p>
+                <ul class="footer-links">
+                    <li><a href="#">Polityka prywatności</a></li>
+                    <li><a href="#">Warunki usługi</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 Lagarto — Inspekcja dronowa · Szczecin</p>
+        <p><a href="#">Polityka prywatności</a> · <a href="#">Warunki usługi</a></p>
+    </div>
+</footer>
+
+<script>
+// Fade-in
+const faders = document.querySelectorAll('.fade-in');
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -28px 0px' });
+faders.forEach(el => io.observe(el));
+
+// Animated counters
+function animateCount(el) {
+    const target = +el.dataset.target;
+    const dur = 1500;
+    const start = performance.now();
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    (function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.round(ease(p) * target);
+        if (p < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+    })(start);
+}
+const counters = document.querySelectorAll('[data-target]');
+const cio = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCount(e.target); cio.unobserve(e.target); } });
+}, { threshold: 0.5 });
+counters.forEach(c => cio.observe(c));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+    });
+});
+
+// Lightbox
+const lbImages = [
+    { src: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&q=90', caption: 'Inspekcja dachu – widok z lotu ptaka' },
+    { src: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=90', caption: 'Pokrycie dachowe – pęknięta dachówka' },
+    { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90', caption: 'Zator w rynnie – kamera 4K' },
+    { src: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=90', caption: 'Elewacja – nalot biologiczny 3. piętro' },
+    { src: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&q=90', caption: 'Obróbka blacharska komina – zbliżenie' },
+    { src: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200&q=90', caption: 'Dom jednorodzinny – inspekcja przedremontowa' },
+];
+let lbCurrent = 0;
+function openLightbox(idx) {
+    lbCurrent = idx;
+    document.getElementById('lb-img').src = lbImages[idx].src;
+    document.getElementById('lb-caption').textContent = (idx+1) + ' / ' + lbImages.length + ' — ' + lbImages[idx].caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+function closeLightboxOnBg(e) { if (e.target === document.getElementById('lightbox')) closeLightbox(); }
+function lbNav(dir) {
+    lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+    document.getElementById('lb-img').src = lbImages[lbCurrent].src;
+    document.getElementById('lb-caption').textContent = (lbCurrent+1) + ' / ' + lbImages.length + ' — ' + lbImages[lbCurrent].caption;
+}
+document.addEventListener('keydown', e => {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') lbNav(1);
+    if (e.key === 'ArrowLeft') lbNav(-1);
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 64, behavior: 'smooth' }); }
+    });
+});
+</script>
+</body>
+</html>
